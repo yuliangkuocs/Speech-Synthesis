@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
@@ -13,6 +13,9 @@ def index():
 def aboutus():
 	return '<h1>About Us</h1>'
 
+@app.route('/tts/')
+def tts():
+	return render_template('tts.html')
 
 
 if __name__ == '__main__':
