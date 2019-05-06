@@ -3,19 +3,22 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-
+# Page
 @app.route('/')
-def index():
-	return '<h1>This is Index Page</h1>'
+def home():
+	return render_template('home.html')
 
 
-@app.route('/aboutus/')
-def aboutus():
-	return '<h1>About Us</h1>'
+@app.route('/about-us/')
+def about_us():
+	return render_template('about-us.html')
 
-@app.route('/tts/')
-def tts():
-	return render_template('tts.html')
+
+@app.route('/text-to-speech/')
+def text_to_speech():
+	return render_template('text-to-speech.html')
+
+# API
 
 
 if __name__ == '__main__':
