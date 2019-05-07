@@ -1504,3 +1504,325 @@ Python auto-reloader enabled
 [pid: 2807|app: 0|req: 1/1] 140.113.231.220 () {44 vars in 838 bytes} [Tue May  7 04:13:55 2019] GET / => generated 97 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
 [pid: 2807|app: 0|req: 2/2] 140.113.231.220 () {42 vars in 837 bytes} [Tue May  7 04:14:00 2019] GET /text-to-speech/ => generated 107 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
 [pid: 2807|app: 0|req: 3/3] 140.113.231.220 () {42 vars in 825 bytes} [Tue May  7 04:14:05 2019] GET /about-us/ => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 2807|app: 0|req: 4/4] 177.188.112.133 () {32 vars in 478 bytes} [Tue May  7 04:25:35 2019] GET / => generated 97 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 2807|app: 0|req: 5/5] 198.167.223.52 () {36 vars in 609 bytes} [Tue May  7 06:08:03 2019] GET /acadmin.php => generated 232 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 2807|app: 0|req: 6/6] 101.251.242.238 () {38 vars in 609 bytes} [Tue May  7 06:24:49 2019] GET / => generated 97 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 2806|app: 0|req: 1/7] 176.37.113.152 () {32 vars in 476 bytes} [Tue May  7 09:41:02 2019] GET / => generated 97 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 2806|app: 0|req: 2/8] 151.236.243.89 () {32 vars in 477 bytes} [Tue May  7 10:17:54 2019] GET / => generated 97 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+...brutally killing workers...
+Gracefully killing worker 1 (pid: 2806)...
+Gracefully killing worker 2 (pid: 2807)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Tue May  7 11:01:12 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x16fabc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x16fabc0 pid: 2550 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 2550)
+spawned uWSGI worker 1 (pid: 4725, cores: 1)
+spawned uWSGI worker 2 (pid: 4726, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.18 (64bit) on [Tue May  7 22:08:20 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+writing pidfile to /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.pid
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x2717f40
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x2717f40 pid: 2909 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2909)
+spawned uWSGI worker 1 (pid: 2911, cores: 1)
+spawned uWSGI worker 2 (pid: 2912, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+[pid: 2912|app: 0|req: 1/1] 140.113.123.251 () {40 vars in 691 bytes} [Tue May  7 22:08:27 2019] GET / => generated 97 bytes in 5 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: pidfile removed.
+VACUUM: unix socket /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock removed.
+VACUUM: unix socket /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status (stats) removed.
+*** Starting uWSGI 2.0.18 (64bit) on [Tue May  7 22:20:50 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+writing pidfile to /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.pid
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0xb67f40
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xb67f40 pid: 3040 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3040)
+spawned uWSGI worker 1 (pid: 3042, cores: 1)
+spawned uWSGI worker 2 (pid: 3043, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+[pid: 3043|app: 0|req: 1/1] 140.113.123.251 () {40 vars in 691 bytes} [Tue May  7 22:20:52 2019] GET / => generated 97 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 3043|app: 0|req: 2/2] 140.113.123.249 () {38 vars in 472 bytes} [Tue May  7 22:29:00 2019] GET / => generated 97 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 3042|app: 0|req: 1/3] 140.113.123.249 () {38 vars in 472 bytes} [Tue May  7 23:29:03 2019] GET / => generated 97 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 3042)...
+Gracefully killing worker 2 (pid: 3043)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Tue May  7 23:41:15 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x187fc40
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x187fc40 pid: 3040 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 3040)
+spawned uWSGI worker 1 (pid: 25219, cores: 1)
+spawned uWSGI worker 2 (pid: 25220, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+Gracefully killing worker 1 (pid: 25219)...
+Gracefully killing worker 2 (pid: 25220)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Tue May  7 23:44:10 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x26bdc40
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x26bdc40 pid: 3040 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 3040)
+spawned uWSGI worker 1 (pid: 4585, cores: 1)
+spawned uWSGI worker 2 (pid: 4586, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+[pid: 4586|app: 0|req: 1/1] 140.113.123.251 () {40 vars in 691 bytes} [Tue May  7 23:44:51 2019] GET / => generated 107 bytes in 8 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4585|app: 0|req: 1/2] 140.113.123.251 () {40 vars in 707 bytes} [Tue May  7 23:45:03 2019] GET /about-us => generated 287 bytes in 13 msecs (HTTP/1.1 308) 3 headers in 148 bytes (1 switches on core 0)
+[pid: 4586|app: 0|req: 2/3] 140.113.123.251 () {40 vars in 709 bytes} [Tue May  7 23:45:03 2019] GET /about-us/ => generated 101 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4586|app: 0|req: 3/4] 140.113.123.251 () {40 vars in 674 bytes} [Tue May  7 23:45:03 2019] GET /favicon.ico => generated 232 bytes in 7 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 4585|app: 0|req: 2/5] 140.113.123.251 () {40 vars in 709 bytes} [Tue May  7 23:45:06 2019] GET /about-us/ => generated 101 bytes in 5 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4586|app: 0|req: 4/6] 140.113.123.251 () {40 vars in 691 bytes} [Tue May  7 23:45:07 2019] GET / => generated 107 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4585|app: 0|req: 3/7] 140.113.123.251 () {40 vars in 719 bytes} [Tue May  7 23:45:15 2019] GET /privacy-policy => generated 299 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 154 bytes (1 switches on core 0)
+[2019-05-07 23:45:15,424] ERROR in app: Exception on /privacy-policy/ [GET]
+Traceback (most recent call last):
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./index.py", line 19, in privacy_policy
+    return render_template('private-policy.html')
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: private-policy.html
+[pid: 4586|app: 0|req: 5/8] 140.113.123.251 () {40 vars in 721 bytes} [Tue May  7 23:45:15 2019] GET /privacy-policy/ => generated 290 bytes in 3 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 0)
+[pid: 4585|app: 0|req: 4/9] 140.113.123.251 () {40 vars in 680 bytes} [Tue May  7 23:45:15 2019] GET /favicon.ico => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[2019-05-07 23:49:22,471] ERROR in app: Exception on /privacy-policy/ [GET]
+Traceback (most recent call last):
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./index.py", line 19, in privacy_policy
+    return render_template('private-policy.html')
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: private-policy.html
+[pid: 4585|app: 0|req: 5/10] 140.113.123.251 () {40 vars in 721 bytes} [Tue May  7 23:49:22 2019] GET /privacy-policy/ => generated 290 bytes in 89 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 0)
+[2019-05-07 23:49:32,158] ERROR in app: Exception on /privacy-policy/ [GET]
+Traceback (most recent call last):
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./index.py", line 19, in privacy_policy
+    return render_template('private-policy.html')
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: private-policy.html
+[pid: 4586|app: 0|req: 6/11] 140.113.123.251 () {40 vars in 721 bytes} [Tue May  7 23:49:32 2019] GET /privacy-policy/ => generated 290 bytes in 1 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 0)
+[pid: 4586|app: 0|req: 7/12] 140.113.123.251 () {40 vars in 721 bytes} [Tue May  7 23:50:50 2019] GET /privacy-policy/ => generated 107 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 4585|app: 0|req: 6/13] 140.113.123.251 () {40 vars in 703 bytes} [Tue May  7 23:51:05 2019] GET /login/ => generated 98 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 4585|app: 0|req: 7/14] 140.113.123.251 () {40 vars in 671 bytes} [Tue May  7 23:51:05 2019] GET /favicon.ico => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
