@@ -14,8 +14,8 @@ def about_us():
 	return render_template('about-us.html')
 
 
-@app.route('/privacy-policy/')
-def privacy_policy():
+@app.route('/private-policy/')
+def private_policy():
 	return render_template('private-policy.html')
 
 
