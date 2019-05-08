@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_file
+from flask import Flask, render_template, send_file, jsonify
 
 
 app = Flask(__name__)
@@ -30,7 +30,7 @@ def logout():
 
 
 @app.route('/test/')
-def logout():
+def test():
 	return render_template('test.html')
 
 
@@ -39,7 +39,7 @@ def logout():
 def api_demo_getAudio():
 	filePath = '../data/tacotron-ch-92000-0.wav'
 
-	return send_file(filePath, 'audio/wav', True, 'tacotron-ch-92000-0.wav')
+	return jsonify(send_file(filePath, 'audio/wav', True, 'tacotron-ch-92000-0.wav')), 200
 
 
 if __name__ == '__main__':
