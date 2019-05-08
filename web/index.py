@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_file
 
 
 app = Flask(__name__)
@@ -28,7 +28,13 @@ def login():
 def logout():
 	return render_template('logout.html')
 
+
 # API
+@app.route('/api/demo/getAudio')
+def api_demo_getAudio():
+	filePath = '../data/tacotron-ch-92000-0.wav'
+
+	return send_file(filePath, 'audio/wav', True, 'tacotron-ch-92000-0.wav')
 
 
 if __name__ == '__main__':
