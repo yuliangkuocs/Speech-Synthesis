@@ -34,6 +34,11 @@ def test():
 	return render_template('test.html')
 
 
+@app.route('/steven/')
+def steven():
+	return render_template('steven.html')
+
+
 # API
 @app.route('/api/demo/getAudio', methods=['POST'])
 def api_demo_getAudio():
