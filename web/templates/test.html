@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		function test() {
+			$.ajax({
+	            type: 'POST',
+	            url: '140.113.123.252/api/demo/getAudio',
+	            data: [],
+	            contentType: "application/json",
+	            dataType: 'json',
+	            cache: false,
+	            processData: false,
+	            success: function(data) {
+	                console.log('Success!');
+	                console.log(data)
+	            }
+	        });
+		}
+	</script>
+</head>
+<body>
+	<h1>Test Page</h1>
+</body>
+</html>
+	

@@ -29,8 +29,13 @@ def logout():
 	return render_template('logout.html')
 
 
+@app.route('/test/')
+def logout():
+	return render_template('test.html')
+
+
 # API
-@app.route('/api/demo/getAudio')
+@app.route('/api/demo/getAudio', methods=['POST'])
 def api_demo_getAudio():
 	filePath = '../data/tacotron-ch-92000-0.wav'
 
