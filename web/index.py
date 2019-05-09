@@ -55,39 +55,39 @@ def api_auth_login():
 
     try:
         if 'id' not in request_data or 'password' not in request_data:
-            return jsonify({'response': 'request data error'}), 400
+            return jsonify({'status': False, 'message': 'request data error'}), 400
 
         if request_data['id'] in users and request_data['password'] == users[request_data['id']]['password']:
             session['user_id'] = request_data['id']
-            return jsonify({'response': 'login success'}), 200
+            return jsonify({'status': True, 'message': 'login success', 'id': request_data['id']}), 200
 
         if request_data['id'] in users and request_data['password'] != users[request_data['id']]['password']:
             session['user_id'] = request_data['id']
-            return jsonify({'response': 'wrong password'}), 401
+            return jsonify({'status': False, 'message': 'wrong password'}), 401
 
         if request_data['id'] not in users:
-            return jsonify({'response': 'user not exists'}), 401
+            return jsonify({'status': False, 'message': 'user not exists'}), 401
 
     except Exception as err:
         print('[ERROR - api/auth/login]', err)
-        return jsonify({'response': 'undefined error'}), 500
+        return jsonify({'status': False, 'message': 'undefined error'}), 500
 
 
 @app.route('/api/auth/logout', methods=['GET'])
 def api_auth_logout():
-    request_data = request.get_json()
+	request_data = request.get_json()
 
-    try:
-        if request_data:
-            return jsonify({'response': 'request data error'}), 400
+	try:
+		if request_data:
+			return jsonify({'status': False, 'message': 'request data error'}), 400
 
-        session.pop('user_id', None)
-        return jsonify({'response': 'logout success'}), 200
+		session.pop('user_id', None)
+		return jsonify({'status': True, 'message': 'logout success'}), 200
 
-    except Exception as err:
-        print('[ERROR - api/auth/logout]', err)
-        return jsonify({'response': 'undefined error'}), 500
-
+	except Exception as err:
+		print('[ERROR - api/auth/logout]', err)
+	
+		return jsonify({'status': False, 'message': 'undefined error'}), 500
 
 # API Steven test 2
 @app.route('/api/test2', methods=['POST'])
