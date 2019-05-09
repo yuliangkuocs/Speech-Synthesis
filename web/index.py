@@ -46,6 +46,18 @@ def api_demo_getAudio():
 
 	return jsonify(send_file(filePath, 'audio/wav', True, 'tacotron-ch-92000-0.wav')), 200
 
+# API using Response
+@app.route("/api/demo/wav", methods=['POST'])
+def api_demo_wav():
+    def generate():
+        with open("../data/tacotron-ch-92000-0.wav") as fwav:
+            data = fwav.read(1024)
+            while data:
+                yield data
+                data = fwav.read(1024)
+    return Response(generate(), mimetype="audio/x-wav")
+
+
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=8080)
