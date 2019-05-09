@@ -15,15 +15,12 @@
 
 		        $.ajax({
 		            type: 'POST',
-		            url: '/login',
+		            url: '/api/auth/login',
 		            data: JSON.stringify(myData),
 		            contentType: "application/json",
 		            dataType: 'json',
 
 		            success: function(res) {
-		                console.log('Success!');
-		                text = res['response']
-		                console.log(res)
 		            }
 		        })
     		})
