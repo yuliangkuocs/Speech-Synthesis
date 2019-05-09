@@ -37,10 +37,10 @@ def private_policy():
 def login():
 	if request.method == 'GET':
 		return render_template('login.html')
-	
-	user_id = request.form['id']
-	if request.form['password'] == users[user_id]['password']:
-		return redirect(url_for('home'))
+
+	request_data = request.get_json()
+	print(request_data)
+
 	return jsonify('Login Fail')
 
 

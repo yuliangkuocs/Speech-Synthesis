@@ -2,13 +2,40 @@
 <html>
 <head>
 	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(function() {
+    		$('#input-submit').click(function() {
+
+				myData = {
+					'id': $('#login-id').val(),
+					'password': $('#login-password').val()
+				}
+
+
+		        $.ajax({
+		            type: 'POST',
+		            url: '/login',
+		            data: JSON.stringify(myData),
+		            contentType: "application/json",
+		            dataType: 'json',
+
+		            success: function(res) {
+		                console.log('Success!');
+		                text = res['response']
+		                console.log(res)
+		            }
+		        })
+    		})
+    	})
+	</script>
 </head>
 <body>
 	<h1>Login Page</h1>
-	<form action='login' method='POST'>
-		<input type='text' name='id' id='user_id' placeholder='id'/>
-		<input type='password' name='password' id='password' placeholder='password'/>
-		<input type='submit' name='submit'/>
-    	</form>
+	<div>
+		<input id='login-id' name='id' type="text" /><br>
+		<input id='login-password' name="password" type="text" />
+		<input id='login-submit' type="submit" value="submit" />
+	</div>
 </body>
 </html>
