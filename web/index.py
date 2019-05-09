@@ -10,8 +10,8 @@ users = {'admin': {'password': 'admin'}}
 # Page
 @app.route('/')
 def home():
-	if 'username' in session:
-		return redirect(url_for('text-to-speech'))
+	if 'user_id' in session:
+		return redirect(url_for('text_to_speech'))
 	return render_template('home.html')
 
 
@@ -22,7 +22,7 @@ def about_us():
 
 @app.route('/text-to-speech/')
 def text_to_speech():
-	if 'username' in session:
+	if 'user_id' in session:
 		return render_template('text-to-speech.html')
 	else:
 		return '<h1>Bad Login</h1>'
@@ -40,13 +40,16 @@ def login():
 
 	request_data = request.get_json()
 	print(request_data)
+	if request_data['id'] in users and request_data['password'] == users[request_data['id']]['password']:
+		session['user_id'] = request_data['id']
+		return jsonify({'response': 'Login Success'}), 200
 
-	return jsonify('Login Fail')
+	return jsonify({'response': 'Wrong name or pw'}), 401
 
 
 @app.route('/logout/')
 def logout():
-	session.pop('username', None)
+	session.pop('user_id', None)
 	return redirect(url_for('home'))
 
 

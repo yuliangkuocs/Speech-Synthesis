@@ -3220,3 +3220,1610 @@ spawned uWSGI worker 1 (pid: 20662, cores: 1)
 spawned uWSGI worker 2 (pid: 20663, cores: 1)
 *** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
 Python auto-reloader enabled
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 15:32:10 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis
+writing pidfile to /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.pid
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x1d5dd40
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1d5dd40 pid: 20817 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20817)
+spawned uWSGI worker 1 (pid: 20819, cores: 1)
+spawned uWSGI worker 2 (pid: 20820, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+[pid: 20819|app: 0|req: 1/1] 140.113.231.220 () {42 vars in 807 bytes} [Thu May  9 15:32:31 2019] GET / => generated 159 bytes in 8 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 20819|app: 0|req: 2/2] 140.113.231.220 () {42 vars in 817 bytes} [Thu May  9 15:32:36 2019] GET /login => generated 281 bytes in 15 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+[pid: 20820|app: 0|req: 1/3] 140.113.231.220 () {42 vars in 819 bytes} [Thu May  9 15:32:36 2019] GET /login/ => generated 330 bytes in 7 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 20820|app: 0|req: 2/4] 140.113.231.220 () {52 vars in 1073 bytes} [Thu May  9 15:32:41 2019] POST /login/login => generated 232 bytes in 10 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 20820|app: 0|req: 3/5] 140.113.231.220 () {42 vars in 819 bytes} [Thu May  9 15:33:47 2019] GET /login/ => generated 330 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 20820|app: 0|req: 4/6] 140.113.231.220 () {52 vars in 1073 bytes} [Thu May  9 15:33:51 2019] POST /login/login => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 20820|app: 0|req: 5/7] 140.113.231.220 () {42 vars in 807 bytes} [Thu May  9 15:34:00 2019] GET / => generated 159 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 20820|app: 0|req: 6/8] 140.113.142.14 () {40 vars in 776 bytes} [Thu May  9 15:37:01 2019] GET / => generated 159 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 20819|app: 0|req: 3/9] 140.113.142.14 () {40 vars in 731 bytes} [Thu May  9 15:37:02 2019] GET /favicon.ico => generated 232 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 20819)...
+Gracefully killing worker 2 (pid: 20820)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from web/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 15:47:43 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x260cbc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x260cbc0 pid: 20817 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 20817)
+spawned uWSGI worker 1 (pid: 21063, cores: 1)
+spawned uWSGI worker 2 (pid: 21064, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 15:47:43 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis
+writing pidfile to /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.pid
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x2668d40
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x2668d40 pid: 21069 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21069)
+spawned uWSGI worker 1 (pid: 21071, cores: 1)
+spawned uWSGI worker 2 (pid: 21072, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+[pid: 21071|app: 0|req: 1/1] 140.113.231.220 () {44 vars in 838 bytes} [Thu May  9 15:47:57 2019] GET / => generated 159 bytes in 7 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21072|app: 0|req: 1/2] 140.113.231.220 () {42 vars in 819 bytes} [Thu May  9 15:48:02 2019] GET /login/ => generated 961 bytes in 7 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 15:48:49 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+writing pidfile to /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.pid
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x1431d40
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1431d40 pid: 21147 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21147)
+spawned uWSGI worker 1 (pid: 21149, cores: 1)
+spawned uWSGI worker 2 (pid: 21150, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+[pid: 21149|app: 0|req: 1/1] 140.113.231.220 () {44 vars in 850 bytes} [Thu May  9 15:49:06 2019] GET /login/ => generated 961 bytes in 8 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21150|app: 0|req: 1/2] 140.113.231.220 () {50 vars in 928 bytes} [Thu May  9 15:49:12 2019] POST /login => generated 281 bytes in 14 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'id': 'admin', 'password': 'admin'}
+[pid: 21149|app: 0|req: 2/3] 140.113.231.220 () {50 vars in 930 bytes} [Thu May  9 15:49:12 2019] POST /login/ => generated 13 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 21149|app: 0|req: 3/4] 140.113.136.220 () {42 vars in 684 bytes} [Thu May  9 15:52:46 2019] GET / => generated 159 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21150|app: 0|req: 2/5] 140.113.136.220 () {42 vars in 684 bytes} [Thu May  9 15:52:52 2019] GET / => generated 159 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21149|app: 0|req: 4/6] 140.113.136.220 () {42 vars in 714 bytes} [Thu May  9 15:52:53 2019] GET /static/test.wav => generated 332844 bytes in 7 msecs via sendfile() (HTTP/1.1 200) 8 headers in 298 bytes (0 switches on core 0)
+[pid: 21149|app: 0|req: 5/7] 140.113.136.220 () {42 vars in 714 bytes} [Thu May  9 15:52:54 2019] GET /static/test.wav => generated 332844 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 298 bytes (0 switches on core 0)
+[pid: 21149|app: 0|req: 6/8] 140.113.136.220 () {46 vars in 750 bytes} [Thu May  9 15:52:55 2019] GET /static/test.wav => generated 2 bytes in 1 msecs (HTTP/1.1 206) 9 headers in 339 bytes (1 switches on core 0)
+[pid: 21149|app: 0|req: 7/9] 140.113.136.220 () {46 vars in 754 bytes} [Thu May  9 15:52:55 2019] GET /static/test.wav => generated 16384 bytes in 1 msecs (HTTP/1.1 206) 9 headers in 347 bytes (20 switches on core 0)
+[pid: 21149|app: 0|req: 8/10] 140.113.136.220 () {46 vars in 760 bytes} [Thu May  9 15:52:55 2019] GET /static/test.wav => generated 5164 bytes in 0 msecs (HTTP/1.1 206) 9 headers in 352 bytes (1 switches on core 0)
+[pid: 21150|app: 0|req: 3/11] 140.113.136.220 () {46 vars in 759 bytes} [Thu May  9 15:52:55 2019] GET /static/test.wav => generated 311296 bytes in 7 msecs (HTTP/1.1 206) 9 headers in 353 bytes (1546 switches on core 0)
+[pid: 21150|app: 0|req: 4/12] 140.113.136.220 () {42 vars in 714 bytes} [Thu May  9 15:53:10 2019] GET /static/test.wav => generated 332844 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 8 headers in 298 bytes (1 switches on core 0)
+[pid: 21149|app: 0|req: 9/13] 140.113.136.220 () {42 vars in 714 bytes} [Thu May  9 15:53:14 2019] GET /static/download => generated 232 bytes in 8 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 21149|app: 0|req: 10/14] 140.113.136.220 () {42 vars in 673 bytes} [Thu May  9 15:53:14 2019] GET /favicon.ico => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 21149|app: 0|req: 11/15] 140.113.136.220 () {42 vars in 714 bytes} [Thu May  9 15:53:21 2019] GET /static/download => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 21150|app: 0|req: 5/16] 140.113.136.220 () {42 vars in 714 bytes} [Thu May  9 15:53:22 2019] GET /static/test.wav => generated 332844 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 8 headers in 298 bytes (1 switches on core 0)
+[pid: 21149|app: 0|req: 12/17] 140.113.136.220 () {42 vars in 706 bytes} [Thu May  9 15:53:23 2019] GET /static/file => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 21150|app: 0|req: 6/18] 140.113.136.220 () {42 vars in 669 bytes} [Thu May  9 15:53:23 2019] GET /favicon.ico => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 21071)...
+Gracefully killing worker 2 (pid: 21072)...
+Gracefully killing worker 2 (pid: 21064)...
+Gracefully killing worker 1 (pid: 21063)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 21149)...
+Gracefully killing worker 2 (pid: 21150)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis
+chdir() to /home/steven/Desktop/Speech-Synthesis
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from web/uwsgi.ini
+[uWSGI] getting INI configuration from web/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 15:53:52 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 15:53:52 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 15:53:52 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x13f4bc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Python main interpreter initialized at 0x2333bc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Python main interpreter initialized at 0x1bbfbc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1bbfbc0 pid: 21147 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21147)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x13f4bc0 pid: 21069 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21069)
+spawned uWSGI worker 1 (pid: 21269, cores: 1)
+spawned uWSGI worker 1 (pid: 21270, cores: 1)
+spawned uWSGI worker 2 (pid: 21271, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+spawned uWSGI worker 2 (pid: 21272, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+Python auto-reloader enabled
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x2333bc0 pid: 20817 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 20817)
+spawned uWSGI worker 1 (pid: 21277, cores: 1)
+spawned uWSGI worker 2 (pid: 21278, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 15:53:55 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+writing pidfile to /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.pid
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0xf1bd40
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xf1bd40 pid: 21283 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21283)
+spawned uWSGI worker 1 (pid: 21285, cores: 1)
+spawned uWSGI worker 2 (pid: 21286, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+[pid: 21285|app: 0|req: 1/1] 140.113.231.220 () {42 vars in 807 bytes} [Thu May  9 15:54:07 2019] GET / => generated 159 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 1/2] 140.113.231.220 () {42 vars in 817 bytes} [Thu May  9 15:54:10 2019] GET /login => generated 281 bytes in 9 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 2/3] 140.113.231.220 () {42 vars in 819 bytes} [Thu May  9 15:54:10 2019] GET /login/ => generated 961 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 3/4] 140.113.231.220 () {50 vars in 928 bytes} [Thu May  9 15:54:16 2019] POST /login => generated 281 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'password': 'admin', 'id': 'admin'}
+[pid: 21286|app: 0|req: 4/5] 140.113.231.220 () {50 vars in 930 bytes} [Thu May  9 15:54:16 2019] POST /login/ => generated 209 bytes in 1 msecs (HTTP/1.1 302) 5 headers in 241 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 5/6] 140.113.231.220 () {44 vars in 863 bytes} [Thu May  9 15:54:16 2019] GET / => generated 159 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 6/7] 140.113.231.220 () {50 vars in 999 bytes} [Thu May  9 15:54:26 2019] POST /login => generated 281 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'password': 'admin', 'id': 'admin'}
+[pid: 21286|app: 0|req: 7/8] 140.113.231.220 () {50 vars in 1001 bytes} [Thu May  9 15:54:26 2019] POST /login/ => generated 209 bytes in 2 msecs (HTTP/1.1 302) 5 headers in 241 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 8/9] 140.113.231.220 () {44 vars in 863 bytes} [Thu May  9 15:54:26 2019] GET / => generated 159 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 9/10] 140.113.231.220 () {50 vars in 999 bytes} [Thu May  9 15:55:04 2019] POST /login => generated 281 bytes in 2 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'password': 'admin', 'id': 'admin'}
+[pid: 21285|app: 0|req: 2/11] 140.113.231.220 () {50 vars in 1001 bytes} [Thu May  9 15:55:04 2019] POST /login/ => generated 209 bytes in 3 msecs (HTTP/1.1 302) 5 headers in 241 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 10/12] 140.113.231.220 () {44 vars in 863 bytes} [Thu May  9 15:55:04 2019] GET / => generated 159 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 11/13] 140.113.231.220 () {50 vars in 999 bytes} [Thu May  9 15:56:14 2019] POST /login => generated 281 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'password': 'admin', 'id': 'admin'}
+[pid: 21286|app: 0|req: 12/14] 140.113.231.220 () {50 vars in 1001 bytes} [Thu May  9 15:56:14 2019] POST /login/ => generated 209 bytes in 1 msecs (HTTP/1.1 302) 5 headers in 241 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 13/15] 140.113.231.220 () {44 vars in 863 bytes} [Thu May  9 15:56:14 2019] GET / => generated 159 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21285|app: 0|req: 3/16] 140.113.231.220 () {42 vars in 888 bytes} [Thu May  9 15:56:33 2019] GET /home/ => generated 232 bytes in 6 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 14/17] 140.113.231.220 () {42 vars in 879 bytes} [Thu May  9 15:56:36 2019] GET // => generated 159 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 15/18] 140.113.231.220 () {42 vars in 878 bytes} [Thu May  9 15:56:40 2019] GET / => generated 159 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21285|app: 0|req: 4/19] 140.113.231.220 () {42 vars in 888 bytes} [Thu May  9 15:57:00 2019] GET /login => generated 281 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 16/20] 140.113.231.220 () {42 vars in 890 bytes} [Thu May  9 15:57:00 2019] GET /login/ => generated 961 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 17/21] 140.113.231.220 () {50 vars in 999 bytes} [Thu May  9 15:57:03 2019] POST /login => generated 281 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'password': 'test', 'id': 'test'}
+[pid: 21286|app: 0|req: 18/22] 140.113.231.220 () {50 vars in 1001 bytes} [Thu May  9 15:57:03 2019] POST /login/ => generated 13 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 21285|app: 0|req: 5/23] 140.113.231.220 () {50 vars in 999 bytes} [Thu May  9 15:57:16 2019] POST /login => generated 281 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'password': 'admin', 'id': 'admin'}
+[pid: 21286|app: 0|req: 19/24] 140.113.231.220 () {50 vars in 1001 bytes} [Thu May  9 15:57:16 2019] POST /login/ => generated 209 bytes in 2 msecs (HTTP/1.1 302) 5 headers in 241 bytes (1 switches on core 0)
+[pid: 21285|app: 0|req: 6/25] 140.113.231.220 () {44 vars in 863 bytes} [Thu May  9 15:57:16 2019] GET / => generated 159 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 20/26] 140.113.231.220 () {50 vars in 999 bytes} [Thu May  9 15:58:38 2019] POST /login => generated 281 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'password': 'adminl', 'id': 'admin'}
+[pid: 21286|app: 0|req: 21/27] 140.113.231.220 () {50 vars in 1001 bytes} [Thu May  9 15:58:38 2019] POST /login/ => generated 13 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 22/28] 140.113.231.220 () {50 vars in 999 bytes} [Thu May  9 15:58:40 2019] POST /login => generated 281 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'password': 'admin', 'id': 'admin'}
+[pid: 21286|app: 0|req: 23/29] 140.113.231.220 () {50 vars in 1001 bytes} [Thu May  9 15:58:40 2019] POST /login/ => generated 209 bytes in 1 msecs (HTTP/1.1 302) 5 headers in 241 bytes (1 switches on core 0)
+[pid: 21286|app: 0|req: 24/30] 140.113.231.220 () {44 vars in 863 bytes} [Thu May  9 15:58:40 2019] GET / => generated 159 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 21270)...
+Gracefully killing worker 2 (pid: 21272)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 21271)...
+Gracefully killing worker 1 (pid: 21269)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 21278)...
+Gracefully killing worker 1 (pid: 21277)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 21285)...
+Gracefully killing worker 2 (pid: 21286)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from web/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:17:55 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+[uWSGI] getting INI configuration from uwsgi.ini
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:17:55 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x22e2bc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Python main interpreter initialized at 0x13eebc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from web/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:17:55 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0xaa9bc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x22e2bc0 pid: 21147 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21147)
+spawned uWSGI worker 1 (pid: 21491, cores: 1)
+spawned uWSGI worker 2 (pid: 21492, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x13eebc0 pid: 21069 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21069)
+spawned uWSGI worker 1 (pid: 21495, cores: 1)
+spawned uWSGI worker 2 (pid: 21496, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xaa9bc0 pid: 20817 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 20817)
+spawned uWSGI worker 1 (pid: 21500, cores: 1)
+spawned uWSGI worker 2 (pid: 21501, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:17:56 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x21d8bc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x21d8bc0 pid: 21283 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21283)
+spawned uWSGI worker 1 (pid: 21505, cores: 1)
+spawned uWSGI worker 2 (pid: 21506, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:18:02 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+writing pidfile to /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.pid
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x25f9d50
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x25f9d50 pid: 21511 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21511)
+spawned uWSGI worker 1 (pid: 21513, cores: 1)
+spawned uWSGI worker 2 (pid: 21514, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+[pid: 21513|app: 0|req: 1/1] 140.113.231.220 () {44 vars in 921 bytes} [Thu May  9 16:18:31 2019] GET /login/ => generated 961 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21514|app: 0|req: 1/2] 140.113.231.220 () {50 vars in 999 bytes} [Thu May  9 16:18:37 2019] POST /login => generated 281 bytes in 15 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'id': 'test', 'password': 'test'}
+[pid: 21514|app: 0|req: 2/3] 140.113.231.220 () {50 vars in 1001 bytes} [Thu May  9 16:18:37 2019] POST /login/ => generated 32 bytes in 1 msecs (HTTP/1.1 201) 2 headers in 76 bytes (1 switches on core 0)
+[pid: 21514|app: 0|req: 3/4] 140.113.231.220 () {50 vars in 999 bytes} [Thu May  9 16:18:49 2019] POST /login => generated 281 bytes in 2 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'id': 'admin', 'password': 'admin'}
+[pid: 21514|app: 0|req: 4/5] 140.113.231.220 () {50 vars in 1001 bytes} [Thu May  9 16:18:49 2019] POST /login/ => generated 29 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 186 bytes (1 switches on core 0)
+[pid: 21514|app: 0|req: 5/6] 140.113.231.220 () {42 vars in 908 bytes} [Thu May  9 16:19:05 2019] GET /text-to-speech/ => generated 18 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 21514|app: 0|req: 6/7] 140.113.231.220 () {42 vars in 890 bytes} [Thu May  9 16:19:16 2019] GET /login/ => generated 961 bytes in 7 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21514|app: 0|req: 7/8] 140.113.231.220 () {50 vars in 999 bytes} [Thu May  9 16:19:31 2019] POST /login => generated 281 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'id': 'admin', 'password': 'admin'}
+[pid: 21514|app: 0|req: 8/9] 140.113.231.220 () {50 vars in 1001 bytes} [Thu May  9 16:19:31 2019] POST /login/ => generated 29 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 186 bytes (1 switches on core 0)
+[pid: 21513|app: 0|req: 2/10] 140.113.231.220 () {42 vars in 892 bytes} [Thu May  9 16:19:45 2019] GET /logout/ => generated 209 bytes in 3 msecs (HTTP/1.1 302) 4 headers in 206 bytes (1 switches on core 0)
+[pid: 21514|app: 0|req: 9/11] 140.113.231.220 () {42 vars in 807 bytes} [Thu May  9 16:19:45 2019] GET / => generated 159 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21513|app: 0|req: 3/12] 140.113.231.220 () {42 vars in 817 bytes} [Thu May  9 16:20:04 2019] GET /login => generated 281 bytes in 6 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+[pid: 21514|app: 0|req: 10/13] 140.113.231.220 () {42 vars in 819 bytes} [Thu May  9 16:20:04 2019] GET /login/ => generated 961 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21513|app: 0|req: 4/14] 140.113.231.220 () {50 vars in 928 bytes} [Thu May  9 16:20:27 2019] POST /login => generated 281 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'id': 'admin', 'password': 'admin'}
+[pid: 21514|app: 0|req: 11/15] 140.113.231.220 () {50 vars in 930 bytes} [Thu May  9 16:20:27 2019] POST /login/ => generated 29 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 186 bytes (1 switches on core 0)
+[pid: 21513|app: 0|req: 5/16] 140.113.231.220 () {50 vars in 999 bytes} [Thu May  9 16:21:35 2019] POST /login => generated 281 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'id': 'admin', 'password': 'admin'}
+[pid: 21513|app: 0|req: 6/17] 140.113.231.220 () {50 vars in 1001 bytes} [Thu May  9 16:21:35 2019] POST /login/ => generated 29 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 186 bytes (1 switches on core 0)
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 21495)...
+Gracefully killing worker 2 (pid: 21496)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 21491)...
+Gracefully killing worker 2 (pid: 21492)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 21500)...
+Gracefully killing worker 2 (pid: 21501)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 21513)...
+Gracefully killing worker 2 (pid: 21514)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+Gracefully killing worker 1 (pid: 21505)...
+Gracefully killing worker 2 (pid: 21506)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from web/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:24:10 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:24:10 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0xcacbc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Python main interpreter initialized at 0xa17bc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from web/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:24:10 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:24:10 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0xf27bc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Python main interpreter initialized at 0x207abd0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xcacbc0 pid: 21069 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21069)
+spawned uWSGI worker 1 (pid: 21587, cores: 1)
+spawned uWSGI worker 2 (pid: 21588, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xa17bc0 pid: 21147 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21147)
+spawned uWSGI worker 1 (pid: 21591, cores: 1)
+spawned uWSGI worker 2 (pid: 21592, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xf27bc0 pid: 20817 (default app)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x207abd0 pid: 21511 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 20817)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21511)
+spawned uWSGI worker 1 (pid: 21597, cores: 1)
+spawned uWSGI worker 1 (pid: 21598, cores: 1)
+spawned uWSGI worker 2 (pid: 21599, cores: 1)
+spawned uWSGI worker 2 (pid: 21600, cores: 1)
+bind(): Address already in use [core/socket.c line 230]
+...brutally killing workers...
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+VACUUM: pidfile removed.
+VACUUM WARNING: unix socket /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock changed inode. Skip removal
+VACUUM: unix socket /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status (stats) removed.
+Thu May  9 16:24:10 2019 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Python auto-reloader enabled
+Thu May  9 16:24:10 2019 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:24:10 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x1c98bc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1c98bc0 pid: 21283 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21283)
+spawned uWSGI worker 1 (pid: 21606, cores: 1)
+spawned uWSGI worker 2 (pid: 21607, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:25:03 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+writing pidfile to /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.pid
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0xc4cd50
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xc4cd50 pid: 21618 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21618)
+spawned uWSGI worker 1 (pid: 21620, cores: 1)
+spawned uWSGI worker 2 (pid: 21621, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+[pid: 21620|app: 0|req: 1/1] 140.113.231.220 () {44 vars in 921 bytes} [Thu May  9 16:25:10 2019] GET /login/ => generated 961 bytes in 8 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21620|app: 0|req: 2/2] 140.113.231.220 () {50 vars in 999 bytes} [Thu May  9 16:25:17 2019] POST /login => generated 281 bytes in 9 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'password': 'admin', 'id': 'admin'}
+[pid: 21621|app: 0|req: 1/3] 140.113.231.220 () {50 vars in 1001 bytes} [Thu May  9 16:25:17 2019] POST /login/ => generated 29 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 186 bytes (1 switches on core 0)
+[pid: 21621|app: 0|req: 2/4] 140.113.231.220 () {42 vars in 879 bytes} [Thu May  9 16:25:22 2019] GET // => generated 159 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21621|app: 0|req: 3/5] 140.113.231.220 () {42 vars in 908 bytes} [Thu May  9 16:25:26 2019] GET /text-to-speech/ => generated 107 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21620|app: 0|req: 3/6] 140.113.231.220 () {42 vars in 892 bytes} [Thu May  9 16:25:33 2019] GET /logout/ => generated 209 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 206 bytes (1 switches on core 0)
+[pid: 21620|app: 0|req: 4/7] 140.113.231.220 () {42 vars in 807 bytes} [Thu May  9 16:25:33 2019] GET / => generated 159 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21621|app: 0|req: 4/8] 140.113.231.220 () {42 vars in 837 bytes} [Thu May  9 16:25:38 2019] GET /text-to-speech/ => generated 18 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 21591)...
+Gracefully killing worker 2 (pid: 21592)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 21588)...
+Gracefully killing worker 1 (pid: 21587)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 21599)...
+Gracefully killing worker 1 (pid: 21597)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 21607)...
+Gracefully killing worker 1 (pid: 21606)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 21621)...
+Gracefully killing worker 1 (pid: 21620)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:26:00 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from web/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:26:00 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0xf6cbc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Python main interpreter initialized at 0x197abc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from web/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:26:00 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x1c56bc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xf6cbc0 pid: 21147 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21147)
+spawned uWSGI worker 1 (pid: 21676, cores: 1)
+spawned uWSGI worker 2 (pid: 21677, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x197abc0 pid: 21069 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21069)
+spawned uWSGI worker 1 (pid: 21680, cores: 1)
+spawned uWSGI worker 2 (pid: 21681, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1c56bc0 pid: 20817 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 20817)
+spawned uWSGI worker 1 (pid: 21685, cores: 1)
+spawned uWSGI worker 2 (pid: 21686, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:26:00 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x2629bc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2629bc0 pid: 21283 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21283)
+spawned uWSGI worker 1 (pid: 21690, cores: 1)
+spawned uWSGI worker 2 (pid: 21691, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:26:01 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0xebabd0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xebabd0 pid: 21618 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21618)
+spawned uWSGI worker 1 (pid: 21695, cores: 1)
+spawned uWSGI worker 2 (pid: 21696, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+[pid: 21696|app: 0|req: 1/1] 140.113.231.220 () {44 vars in 868 bytes} [Thu May  9 16:26:13 2019] GET /text-to-speech/ => generated 18 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 21696|app: 0|req: 2/2] 140.113.231.220 () {42 vars in 819 bytes} [Thu May  9 16:26:18 2019] GET /login/ => generated 961 bytes in 7 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21696|app: 0|req: 3/3] 140.113.231.220 () {50 vars in 928 bytes} [Thu May  9 16:26:23 2019] POST /login => generated 281 bytes in 12 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'id': 'admin', 'password': 'admin'}
+[pid: 21696|app: 0|req: 4/4] 140.113.231.220 () {50 vars in 930 bytes} [Thu May  9 16:26:23 2019] POST /login/ => generated 29 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 186 bytes (1 switches on core 0)
+[2019-05-09 16:26:25,989] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./index.py", line 14, in home
+    return redirect(url_for('text-to-speech'))
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/steven/Desktop/Speech-Synthesis/web/.env/lib/python3.5/site-packages/werkzeug/routing.py", line 2181, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'text-to-speech'. Did you mean 'text_to_speech' instead?
+[pid: 21695|app: 0|req: 1/5] 140.113.231.220 () {42 vars in 879 bytes} [Thu May  9 16:26:25 2019] GET // => generated 290 bytes in 6 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 0)
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 21691)...
+Gracefully killing worker 1 (pid: 21690)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 21695)...
+Gracefully killing worker 2 (pid: 21696)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 21677)...
+Gracefully killing worker 1 (pid: 21676)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 21680)...
+Gracefully killing worker 2 (pid: 21681)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 21685)...
+Gracefully killing worker 2 (pid: 21686)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:26:49 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x1efdbc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1efdbc0 pid: 21283 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21283)
+spawned uWSGI worker 1 (pid: 21752, cores: 1)
+spawned uWSGI worker 2 (pid: 21753, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:26:49 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x17a8bd0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x17a8bd0 pid: 21618 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21618)
+spawned uWSGI worker 1 (pid: 21757, cores: 1)
+spawned uWSGI worker 2 (pid: 21758, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:26:49 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+Python main interpreter initialized at 0x130ebc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+[uWSGI] getting INI configuration from web/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:26:49 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x7d2bc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from web/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:26:49 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x19acbc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x130ebc0 pid: 21147 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21147)
+spawned uWSGI worker 1 (pid: 21762, cores: 1)
+spawned uWSGI worker 2 (pid: 21763, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7d2bc0 pid: 21069 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21069)
+spawned uWSGI worker 1 (pid: 21767, cores: 1)
+spawned uWSGI worker 2 (pid: 21768, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x19acbc0 pid: 20817 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 20817)
+spawned uWSGI worker 1 (pid: 21772, cores: 1)
+spawned uWSGI worker 2 (pid: 21773, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+[pid: 21757|app: 0|req: 1/1] 140.113.231.220 () {42 vars in 892 bytes} [Thu May  9 16:26:55 2019] GET /logout/ => generated 209 bytes in 6 msecs (HTTP/1.1 302) 4 headers in 206 bytes (1 switches on core 0)
+[pid: 21757|app: 0|req: 2/2] 140.113.231.220 () {42 vars in 807 bytes} [Thu May  9 16:26:55 2019] GET / => generated 159 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21758|app: 0|req: 1/3] 140.113.231.220 () {42 vars in 817 bytes} [Thu May  9 16:26:58 2019] GET /login => generated 281 bytes in 14 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+[pid: 21758|app: 0|req: 2/4] 140.113.231.220 () {42 vars in 819 bytes} [Thu May  9 16:26:58 2019] GET /login/ => generated 961 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21758|app: 0|req: 3/5] 140.113.231.220 () {50 vars in 928 bytes} [Thu May  9 16:27:02 2019] POST /login => generated 281 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'id': 'admin', 'password': 'admin'}
+[pid: 21758|app: 0|req: 4/6] 140.113.231.220 () {50 vars in 930 bytes} [Thu May  9 16:27:02 2019] POST /login/ => generated 29 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 186 bytes (1 switches on core 0)
+[pid: 21758|app: 0|req: 5/7] 140.113.231.220 () {42 vars in 878 bytes} [Thu May  9 16:27:05 2019] GET / => generated 239 bytes in 1 msecs (HTTP/1.1 302) 3 headers in 141 bytes (1 switches on core 0)
+[pid: 21758|app: 0|req: 6/8] 140.113.231.220 () {42 vars in 908 bytes} [Thu May  9 16:27:05 2019] GET /text-to-speech/ => generated 107 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21758|app: 0|req: 7/9] 140.113.231.220 () {42 vars in 892 bytes} [Thu May  9 16:29:39 2019] GET /logout/ => generated 209 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 206 bytes (1 switches on core 0)
+[pid: 21758|app: 0|req: 8/10] 140.113.231.220 () {42 vars in 807 bytes} [Thu May  9 16:29:39 2019] GET / => generated 159 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21758|app: 0|req: 9/11] 140.113.231.220 () {42 vars in 821 bytes} [Thu May  9 16:29:46 2019] GET /logout/ => generated 209 bytes in 1 msecs (HTTP/1.1 302) 3 headers in 126 bytes (1 switches on core 0)
+[pid: 21758|app: 0|req: 10/12] 140.113.231.220 () {42 vars in 807 bytes} [Thu May  9 16:29:46 2019] GET / => generated 159 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21758|app: 0|req: 11/13] 140.113.231.220 () {42 vars in 817 bytes} [Thu May  9 16:29:54 2019] GET /login => generated 281 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+[pid: 21758|app: 0|req: 12/14] 140.113.231.220 () {42 vars in 819 bytes} [Thu May  9 16:29:54 2019] GET /login/ => generated 961 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 21758|app: 0|req: 13/15] 140.113.231.220 () {50 vars in 928 bytes} [Thu May  9 16:29:58 2019] POST /login => generated 281 bytes in 1 msecs (HTTP/1.1 308) 3 headers in 145 bytes (1 switches on core 0)
+{'id': 'test', 'password': '123'}
+[pid: 21758|app: 0|req: 14/16] 140.113.231.220 () {50 vars in 930 bytes} [Thu May  9 16:29:58 2019] POST /login/ => generated 32 bytes in 0 msecs (HTTP/1.1 201) 2 headers in 76 bytes (1 switches on core 0)
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 21768)...
+Gracefully killing worker 1 (pid: 21772)...
+Gracefully killing worker 1 (pid: 21767)...
+Gracefully killing worker 2 (pid: 21773)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+Gracefully killing worker 1 (pid: 21752)...
+Gracefully killing worker 2 (pid: 21753)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 21757)...
+Gracefully killing worker 2 (pid: 21758)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 21762)...
+Gracefully killing worker 2 (pid: 21763)...
+[uwsgi-python-reloader] module/file ./index.py has been modified
+worker 1 buried after 1 seconds
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from web/uwsgi.ini
+[uWSGI] getting INI configuration from web/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:32:12 2019] ***
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:32:12 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+nodename: steven-ubuntu
+machine: x86_64
+machine: x86_64
+clock source: unix
+clock source: unix
+pcre jit disabled
+pcre jit disabled
+detected number of CPU cores: 16
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis
+current working directory: /home/steven/Desktop/Speech-Synthesis
+detected binary path: /home/steven/.local/bin/uwsgi
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your processes number limit is 63665
+your memory page size is 4096 bytes
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x1f6ebc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Python main interpreter initialized at 0x1530bc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1530bc0 pid: 21069 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21069)
+spawned uWSGI worker 1 (pid: 21830, cores: 1)
+spawned uWSGI worker 2 (pid: 21831, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1f6ebc0 pid: 20817 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 20817)
+spawned uWSGI worker 1 (pid: 21834, cores: 1)
+spawned uWSGI worker 2 (pid: 21835, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:32:12 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x213abc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x213abc0 pid: 21283 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21283)
+spawned uWSGI worker 1 (pid: 21839, cores: 1)
+spawned uWSGI worker 2 (pid: 21840, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:32:12 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x1bb8bd0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1bb8bd0 pid: 21618 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21618)
+spawned uWSGI worker 1 (pid: 21844, cores: 1)
+spawned uWSGI worker 2 (pid: 21845, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock)
+running /home/steven/.local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  9 16:32:13 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x1377bc0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1377bc0 pid: 21147 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 21147)
+spawned uWSGI worker 1 (pid: 21849, cores: 1)
+spawned uWSGI worker 2 (pid: 21850, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
