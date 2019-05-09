@@ -1,31 +1,18 @@
-from flask import Flask, render_template, send_file, jsonify
-from flask_login import LoginManager, UserMixin, login_user, current_user, login_required, logout_user
-
+from flask import Flask, render_template, send_file, jsonify, request, redirect, url_for, session
 
 app = Flask(__name__)
 app.secret_key = '7433a508b0a1ade2faea975e'
 
-login_manager - LoginManager(app)
+
 users = {'admin': {'password': 'admin'}}
-
-
-class User(UserMixin):
-	pass
-
-
-@login_manager.user_loader
-def user_loader(user_id):
-	if user_id not in users:
-		return
-	user = User()
-	user.id = user_id
-	return user
 
 
 # Page
 @app.route('/')
-def text_to_speech():
-	return render_template('text-to-speech.html')
+def home():
+	if 'username' in session:
+		return redirect(url_for('text-to-speech'))
+	return render_template('home.html')
 
 
 @app.route('/about-us/')
@@ -33,33 +20,34 @@ def about_us():
 	return render_template('about-us.html')
 
 
+@app.route('/text-to-speech/')
+def text_to_speech():
+	if 'username' in session:
+		return render_template('text-to-speech.html')
+	else:
+		return '<h1>Bad Login</h1>'
+
+
 @app.route('/private-policy/')
 def private_policy():
 	return render_template('private-policy.html')
 
 
-@app.route('/login/')
+@app.route('/login/', methods=['GET', 'POST'])
 def login():
 	if request.method == 'GET':
 		return render_template('login.html')
 	
 	user_id = request.form['id']
 	if request.form['password'] == users[user_id]['password']:
-		user = User()
-		user.id = user_id
-		login_user(user)
-		return redirect(url_for('protect'))
-	return 'Login Fail'
+		return redirect(url_for('home'))
+	return jsonify('Login Fail')
 
-
-@app.route('/protect/')
-def protect():
-	if current_user.is_active:
-		return 'Logged in as: ' + current_user.id
 
 @app.route('/logout/')
 def logout():
-	return render_template('logout.html')
+	session.pop('username', None)
+	return redirect(url_for('home'))
 
 
 @app.route('/test/')
