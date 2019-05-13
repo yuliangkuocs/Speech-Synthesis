@@ -41,6 +41,7 @@ def norm_data(args):
         raise ValueError('dataset value entered {} does not belong to supported datasets: {}'.format(
             args.dataset, supported_datasets))
 
+    # LJspeech dataset
     if args.dataset.startswith('LJSpeech'):
         return [os.path.join(args.base_dir, args.dataset)]
 
@@ -48,6 +49,7 @@ def norm_data(args):
     if args.dataset in ['donald-trump']:
         return [os.path.join(args.base_dir + '/USA_Politician', args.dataset)]
 
+    # M-AILABS dataset
     if args.dataset == 'M-AILABS':
         supported_languages = ['en_US', 'en_UK', 'fr_FR', 'it_IT', 'de_DE', 'es_ES', 'ru_RU',
             'uk_UK', 'pl_PL', 'nl_NL', 'pt_PT', 'fi_FI', 'se_SE', 'tr_TR', 'ar_SA']
@@ -94,9 +96,9 @@ def main():
     parser.add_argument('--dataset', default=None)
     '''For M-AILABS Dataset'''
     parser.add_argument('--language', default='en_US')
-    parser.add_argument('--voice', default='female')
-    parser.add_argument('--reader', default='mary_ann')
-    parser.add_argument('--merge_books', type=bool, default=False)
+    parser.add_argument('--voice', default='male')
+    parser.add_argument('--reader', default='elliot_miller')
+    parser.add_argument('--merge_books', type=bool, default=True)
     parser.add_argument('--book', default='northandsouth')
     '''For M-AILABS Dataset'''
     parser.add_argument('--output', default='../training_data')
