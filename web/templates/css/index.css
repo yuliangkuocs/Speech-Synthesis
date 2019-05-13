@@ -1,0 +1,157 @@
+@import './reset.css';
+
+body {	
+ 	background-color: lightblue;
+}
+
+ .nav {
+     height: 80px;
+     position: relative;
+
+
+
+ }
+
+a {
+    text-decoration:none;
+}
+
+.menu {
+ 
+     float: right;
+}
+
+.menu li{
+     float: left;
+}
+.button {
+     color: white;
+	width: 10vw;
+	height: 50px;
+	background-color: lightblue;
+     font-size: 15px;
+     border: none;
+     border-radius: 50px;
+     margin:10px;
+
+}
+
+.button:hover {
+     background-color:#4f5b66;
+}
+
+.enter{
+     display: none;
+     color: white;
+     width: 10vw;
+     height: 50px;
+     background-color: #4f5b66;
+     font-size: 15px;
+     border: none;
+     border-radius: 50px;
+     margin-top:10px;
+     margin-left: 25%;
+     box-shadow:-4px 4px 3px rgba(20%,20%,40%,0.5);
+
+ 
+}
+.enter:active  {
+     box-shadow:none;
+}
+
+.showmenu{
+     display: none;
+}
+
+.logo {
+
+     float: left;
+}
+
+.content{
+     margin-top: 30vh;
+     margin-left: 25vw;
+}
+.content .intro {
+	width: 50vw;
+	height: 100px;  
+	background-color: black;
+ }
+
+.content .input-box {
+ 	width: 600px;
+     height: 50px;
+     background-color: white;
+     vertical-align: middle;
+     border-radius: 10px;
+     position: relative;
+     box-shadow:-4px 4px 3px rgba(20%,20%,40%,0.5);
+ }
+
+.input-box input[type="text"]{
+  width: 85%;
+  height: 80%;
+  background: white;
+  border: none;
+  font-size: 12pt;
+  float: left;
+  color: black;
+  padding-left: 30px;
+  margin-top: 5px;
+  border-radius: 5px;
+
+}
+
+
+.input-box .icon{
+  margin-right: 5px;
+  float: right;
+  z-index: 1;
+  color: #4f5b66;
+  cursor:pointer;
+  position: absolute;
+
+  
+}
+
+@media (max-width: 850px) {
+    
+     .input-box .icon{
+          display: none;
+     }
+     .content .input-box{
+          width: 50vw;
+          margin-left: -10vw;
+     }
+     .enter{
+          display: block;
+          margin-left: 10vw;
+     }
+    .menu{
+          display: none;
+          float: right;
+          background-color: black;
+          max-height: 500px;
+          overflow: hidden;
+          transition: max-height 2.3s;
+          position: relative;
+          
+     }
+     
+     .menu li{
+          float: none;
+          border-bottom: 1px solid #4f5b66;
+     }
+     .menu li a{
+          transition: all 0.3s;
+     }
+
+    .showmenu{
+          display: block;
+          float: right;
+          margin: 10px;
+          z-index:1;
+          color: #4f5b66;
+     }
+     
+}
