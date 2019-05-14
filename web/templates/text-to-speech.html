@@ -6,7 +6,7 @@
 	<title>
 		Text-to-Speech
 	</title>
-	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 
 </head>
 <body>
@@ -17,7 +17,7 @@
 			<li><a href="##"><button class="button">Technical Detail</button></a></li>
 			<li><a href="##"><button class="button">Privacy Policy</button></a></li>
 			<li><a href="##"><button class="button">About Us</button></a></li>
-			<li><a href="##"><button class="button">Login</button></a></li>
+			<li><a href="{{url_for('login')}}"><button class="button">Login</button></a></li>
 		</ul>
 		<label for="burger" class="showmenu"><i class="fas fa-bars fa-3x"></i></label>
 		<input type="checkbox" id="burger">
