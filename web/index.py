@@ -34,7 +34,12 @@ def private_policy():
 
 @app.route('/login/')
 def login():
-    return render_template('login.html')
+	if 'user_id' in session:
+		print('already login')
+		return render_template('already-login.html')
+	else:
+		print('not login')
+		return render_template('login.html')
 
 
 @app.route('/test/')
