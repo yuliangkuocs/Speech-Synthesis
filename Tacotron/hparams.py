@@ -21,8 +21,8 @@ hparams = tf.contrib.training.HParams(
 
 	#Mel spectrogram
 	fft_size = 1024,
-	hop_size = 256,
-	sample_rate = 48000, #[NEW: Trump is 48kHz] (Old: ljspeech dataset is 22050 Hz)
+	hop_size = 200,
+	sample_rate = 16000, #[NEW: Trump is 48kHz] (Old: ljspeech dataset is 22050 Hz)
 	frame_shift_ms = None,
 
 	#Mel and Linear spectrograms normalization/scaling and clipping
@@ -34,7 +34,7 @@ hparams = tf.contrib.training.HParams(
 	#Limits
 	min_level_db =- 100,
 	ref_level_db = 20,
-	fmin = 125,
+	fmin = 55,
 	fmax = 7600,
 
 	#Griffin Lim
@@ -43,7 +43,7 @@ hparams = tf.contrib.training.HParams(
 
 
 	#Tacotron
-	outputs_per_step = 1, #number of frames to generate at each decoding step (speeds up computation and allows for higher batch size)
+	outputs_per_step = 10, #number of frames to generate at each decoding step (speeds up computation and allows for higher batch size)
 	stop_at_any = True, #Determines whether the decoder should stop when predicting <stop> to any frame or to all of them
 
 	embedding_dim = 512, #dimension of embedding space
