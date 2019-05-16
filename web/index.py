@@ -1,7 +1,15 @@
 from flask import Flask, render_template, send_file, jsonify, request, redirect, url_for, session
+from flask_sqlalchemy import SQLAlchemy
+
 
 app = Flask(__name__)
 app.secret_key = '7433a508b0a1ade2faea975e'
+
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://steven:222222@140.113.123.252:3308/db-Speech-Synthesis'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+db = SQLAlchemy(app)
+
 
 users = {'admin': {'password': 'admin'}}
 

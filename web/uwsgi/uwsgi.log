@@ -896,3 +896,270 @@ not login
 [pid: 3285|app: 0|req: 66/154] 31.162.251.5 () {32 vars in 474 bytes} [Wed May 15 13:29:29 2019] GET / => generated 188 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
 [pid: 3285|app: 0|req: 67/155] 31.162.251.5 () {32 vars in 481 bytes} [Wed May 15 13:29:29 2019] GET / => generated 188 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
 [pid: 3285|app: 0|req: 68/156] 45.77.11.224 () {32 vars in 386 bytes} [Wed May 15 14:55:14 2019] GET / => generated 188 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 17 01:55:33 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+writing pidfile to /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.pid
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x1432e70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./index.py", line 2, in <module>
+    from flask_sqlalchemy import SQLAlchemy
+ImportError: No module named 'flask_sqlalchemy'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5048)
+spawned uWSGI worker 1 (pid: 5050, cores: 1)
+spawned uWSGI worker 2 (pid: 5051, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 17 01:57:53 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+writing pidfile to /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.pid
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x22d8e70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./index.py", line 2, in <module>
+    from flask_sqlalchemy import SQLAlchemy
+ImportError: No module named 'flask_sqlalchemy'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5148)
+spawned uWSGI worker 1 (pid: 5150, cores: 1)
+spawned uWSGI worker 2 (pid: 5151, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 17 01:59:13 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+writing pidfile to /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.pid
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x1228e70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./index.py", line 2, in <module>
+    from flask_sqlalchemy import SQLAlchemy
+ImportError: No module named 'flask_sqlalchemy'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5170)
+spawned uWSGI worker 1 (pid: 5172, cores: 1)
+spawned uWSGI worker 2 (pid: 5173, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 17 02:04:49 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+writing pidfile to /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.pid
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0xd7ce10
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./index.py", line 2, in <module>
+    from flask_sqlalchemy import SQLAlchemy
+ImportError: No module named 'flask_sqlalchemy'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5299)
+spawned uWSGI worker 1 (pid: 5301, cores: 1)
+spawned uWSGI worker 2 (pid: 5302, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 17 02:09:18 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+writing pidfile to /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.pid
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x1517370
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./index.py", line 2, in <module>
+    from flask_sqlalchemy import SQLAlchemy
+ImportError: No module named 'flask_sqlalchemy'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5402)
+spawned uWSGI worker 1 (pid: 5404, cores: 1)
+spawned uWSGI worker 2 (pid: 5405, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 17 02:10:44 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+writing pidfile to /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.pid
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/Desktop/Speech-Synthesis/web/.env
+Python main interpreter initialized at 0x173e370
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./index.py", line 2, in <module>
+    from flask_sqlalchemy import SQLAlchemy
+ImportError: No module named 'flask_sqlalchemy'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5445)
+spawned uWSGI worker 1 (pid: 5447, cores: 1)
+spawned uWSGI worker 2 (pid: 5448, cores: 1)
+*** Stats server enabled on /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.status fd: 11 ***
+Python auto-reloader enabled
+*** Starting uWSGI 2.0.18 (64bit) on [Fri May 17 02:32:11 2019] ***
+compiled with version: 5.4.0 20160609 on 03 May 2019 18:28:07
+os: Linux-4.15.0-45-generic #48~16.04.1-Ubuntu SMP Tue Jan 29 18:03:48 UTC 2019
+nodename: steven-ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /home/steven/Desktop/Speech-Synthesis/web
+writing pidfile to /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.pid
+detected binary path: /home/steven/.local/bin/uwsgi
+chdir() to /home/steven/Desktop/Speech-Synthesis/web
+your processes number limit is 63665
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/steven/Desktop/Speech-Synthesis/web/uwsgi/uwsgi.sock fd 3
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/steven/.conda/envs/walon
+Failed to import the site module
+Traceback (most recent call last):
+  File "/home/steven/.conda/envs/walon/lib/python3.5/site.py", line 559, in <module>
+    main()
+  File "/home/steven/.conda/envs/walon/lib/python3.5/site.py", line 540, in main
+    known_paths = addusersitepackages(known_paths)
+  File "/home/steven/.conda/envs/walon/lib/python3.5/site.py", line 281, in addusersitepackages
+    user_site = getusersitepackages()
+  File "/home/steven/.conda/envs/walon/lib/python3.5/site.py", line 257, in getusersitepackages
+    user_base = getuserbase() # this will also set USER_BASE
+  File "/home/steven/.conda/envs/walon/lib/python3.5/site.py", line 247, in getuserbase
+    USER_BASE = get_config_var('userbase')
+  File "/home/steven/.conda/envs/walon/lib/python3.5/sysconfig.py", line 607, in get_config_var
+    return get_config_vars().get(name)
+  File "/home/steven/.conda/envs/walon/lib/python3.5/sysconfig.py", line 556, in get_config_vars
+    _init_posix(_CONFIG_VARS)
+  File "/home/steven/.conda/envs/walon/lib/python3.5/sysconfig.py", line 427, in _init_posix
+    _temp = __import__(name, globals(), locals(), ['build_time_vars'], 0)
+ImportError: No module named '_sysconfigdata_m_linux_x86_64-linux-gnu'
