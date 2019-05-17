@@ -1,7 +1,7 @@
 # coding=UTF-8
 import uuid
 from flask import Flask, render_template, url_for, session, redirect, request
-from resp import StatusCode, response
+from response import StatusCode, response
 from database.database import *
 
 app = Flask(__name__)
