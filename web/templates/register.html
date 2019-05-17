@@ -3,8 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(function() {
+    		$('#register-submit').click(function() {
+
+				myData = {
+					'id': $('#register-id').val(),
+					'password': $('#register-password').val()
+				}
+
+
+		        $.ajax({
+		            type: 'POST',
+		            url: '/api/auth/register',
+		            data: JSON.stringify(myData),
+		            contentType: "application/json",
+		            dataType: 'json',
+
+		            success: function(res) {
+		                console.log(res)
+		            }
+		        })
+    		})
+    	})
+	</script>
 </head>
 <body>
-    <h1>Register</h1>
+    <h1>Register Page</h1>
+    <div>
+		<input id='register-id' name='id' type="text" /><br>
+		<input id='register-password' name="password" type="text" />
+		<input id='register-submit' type="submit" value="submit" />
+	</div>
 </body>
 </html>
