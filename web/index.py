@@ -157,7 +157,7 @@ def api_auth_register():
             insert_user(User(guid, request_data['id'], request_data['password']))
 
     except Exception as err:
-        print('[ERROR - api/auth/logout]', err)
+        print('[ERROR - api/auth/register]', err)
         return response(status_code.UNDEFINED)
 
 
