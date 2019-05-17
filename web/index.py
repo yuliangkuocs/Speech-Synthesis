@@ -1,6 +1,6 @@
 # coding=UTF-8
-import random
-import string
+import uuid
+import uuid
 from flask import Flask, render_template, url_for, session, redirect, request
 from response import StatusCode, response
 from database.database import *
@@ -64,18 +64,17 @@ def steven():
 # API
 def generate_guid():
     '''
-    generate guid for an user with size 32
+    generate guid for an user
     :return: str
     '''
 
-    chars = string.ascii_lowercase + string.digits
 
     users = select_users()
 
     tell = True
 
     while True:
-        guid = ''.join(random.choices(chars, k=32))
+        guid = uuid.uuid4()
 
         if users:
             for u in users:
