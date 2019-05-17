@@ -152,8 +152,11 @@ def api_auth_register():
         else:
             guid = generate_guid()
             is_insert = insert_user(User(guid, request_data['id'], request_data['password']))
+
             if not is_insert:
                 raise ValueError('[ERROR - api/auth/register] insert user fail')
+
+            return response(status_code.OK)
 
     except Exception as err:
         print('[ERROR - api/auth/register]', err)
