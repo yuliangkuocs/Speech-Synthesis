@@ -34,12 +34,12 @@ def private_policy():
 
 @app.route('/login/')
 def login():
-	if 'user_id' in session:
-		print('already login')
-		return render_template('already-login.html')
-	else:
-		print('not login')
-		return render_template('login.html')
+    if 'user_id' in session:
+        print('already login')
+        return render_template('already-login.html')
+    else:
+        print('not login')
+        return render_template('login.html')
 
 
 @app.route('/test/')
@@ -80,19 +80,40 @@ def api_auth_login():
 
 @app.route('/api/auth/logout', methods=['GET'])
 def api_auth_logout():
-	request_data = request.get_json()
+    request_data = request.get_json()
 
-	try:
-		if request_data:
-			return jsonify({'status': False, 'message': 'request data error'}), 400
+    try:
+        if request_data:
+            return jsonify({'status': False, 'message': 'request data error'}), 400
 
-		session.pop('user_id', None)
-		return jsonify({'status': True, 'message': 'logout success'}), 200
+        if 'user_id' not in session:
+            return jsonify({'status': False, 'message': 'Not login'}), 204
 
-	except Exception as err:
-		print('[ERROR - api/auth/logout]', err)
-	
-		return jsonify({'status': False, 'message': 'undefined error'}), 500
+        session.pop('user_id', None)
+        return jsonify({'status': True, 'message': 'logout success'}), 200
+
+    except Exception as err:
+        print('[ERROR - api/auth/logout]', err)
+
+        return jsonify({'status': False, 'message': 'undefined error'}), 500
+
+
+@app.route('/api/auth/register', methods=['POST'])
+def api_auth_logout():
+    request_data = request.get_json()
+
+    try:
+        if request_data:
+            return jsonify({'status': False, 'message': 'request data error'}), 400
+
+        session.pop('user_id', None)
+        return jsonify({'status': True, 'message': 'logout success'}), 200
+
+    except Exception as err:
+        print('[ERROR - api/auth/logout]', err)
+
+        return jsonify({'status': False, 'message': 'undefined error'}), 500
+
 
 # API Steven test 2
 @app.route('/api/test2', methods=['POST'])
