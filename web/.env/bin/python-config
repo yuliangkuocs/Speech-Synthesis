@@ -1,4 +1,4 @@
-#!/home/steven/Desktop/kuo/web/.env/bin/python
+#!/home/steven/Desktop/Speech-Synthesis/web/.env/bin/python
 
 import sys
 import getopt

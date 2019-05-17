@@ -25,7 +25,7 @@ def _deactivate(args):
 _deactivate(["nondestructive"])
 aliases["deactivate"] = _deactivate
 
-$VIRTUAL_ENV = r"/home/steven/Desktop/kuo/web/.env"
+$VIRTUAL_ENV = r"/home/steven/Desktop/Speech-Synthesis/web/.env"
 
 $_OLD_VIRTUAL_PATH = $PATH
 $PATH = $PATH[:]

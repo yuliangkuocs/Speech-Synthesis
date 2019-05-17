@@ -2,13 +2,13 @@
 import random
 import string
 from flask import Flask, render_template, url_for, session, redirect, request
-# from response import StatusCode, response
+from response import StatusCode, response
 from database.database import *
 
 app = Flask(__name__)
 app.secret_key = '7433a508b0a1ade2faea975e'
 
-# status_code = StatusCode()
+status_code = StatusCode()
 
 
 @app.route('/')
@@ -162,5 +162,6 @@ def steven():
 
 
 if __name__ == '__main__':
-    create_tables()
-    app.run(host='0.0.0.0', port=8080)
+	create_tables()
+	app.run(host='0.0.0.0', port=8080)
+

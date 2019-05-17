@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/steven/Desktop/kuo/web/.env"
+VIRTUAL_ENV="/home/steven/Desktop/Speech-Synthesis/web/.env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

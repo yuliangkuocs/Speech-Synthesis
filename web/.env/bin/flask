@@ -1,4 +1,4 @@
-#!/home/steven/Desktop/kuo/web/.env/bin/python3
+#!/home/steven/Desktop/Speech-Synthesis/web/.env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
