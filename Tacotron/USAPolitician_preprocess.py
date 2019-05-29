@@ -10,8 +10,8 @@ def csv_generate(args):
     if not args.dataset:
         raise ValueError('Please Enter an USA politician Dataset!!')
     else:
-        USA_dir = os.path.join('DATA/USA_Politician/data', args.dataset)
-        txt_dir = os.path.join(USA_dir, 'txt')
+        USA_dir = os.path.join('DATA/USA_Politician/data', args.dataset, 'data/')
+        txt_dir = os.path.join(USA_dir, 'txt/', args.dataset)
 
         features = []
         for files in os.listdir(txt_dir):
