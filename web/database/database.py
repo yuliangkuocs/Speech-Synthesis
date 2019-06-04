@@ -88,6 +88,24 @@ def select_user_by_id(id):
     return user
 
 
+def select_user_by_guid(guid):
+    '''
+    select an user by guid
+    :param guid: user guid
+    :return: User
+    '''
+
+    db_connect = sqlite3.connect(DATABASE)
+    db_cursor = db_connect.cursor()
+
+    db_cursor.execute('SELECT * FROM User WHERE GUID = \'%s\'' % guid)
+    user = sql_to_data(db_user=db_cursor.fetchone())
+
+    db_connect.close()
+
+    return user
+
+
 def insert_user(user):
     '''
     insert an user into table User

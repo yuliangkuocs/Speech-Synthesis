@@ -3,6 +3,7 @@ import uuid
 from flask import Flask, render_template, url_for, session, redirect, request
 from response import StatusCode, response
 from database.database import *
+from tts import tts
 
 app = Flask(__name__)
 app.secret_key = '7433a508b0a1ade2faea975e'
@@ -160,6 +161,32 @@ def api_auth_register():
 
     except Exception as err:
         print('[ERROR - api/auth/register]', err)
+        return response(status_code.UNDEFINED)
+
+
+@app.route('/api/tts/mandarin', methods=['POST'])
+def api_tts_mandarin():
+    request_data = request.get_json()
+
+    try:
+        if 'guid' not in request_data or 'text' not in request_data:
+            return response(status_code.DATA_FORMAT_ERROR)
+
+        guid = request_data['guid']
+        user = select_user_by_guid(guid)
+
+        if not user:
+            return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
+
+        else:
+            isOk = tts(guid)
+            if not isOk:
+                return response(status_code.UNDEFINED)
+
+            return response(status_code.SUCCESS, response_data='voice.stevenben.nctu.me/static/{0}.wav'.format(guid))
+
+    except Exception as err:
+        print('[ERROR - api/tts/mandarin]', err)
         return response(status_code.UNDEFINED)
 
 
