@@ -34,7 +34,7 @@ def write_metadata(metadata, out_dir):
 def norm_data(args):
 
         print('Selecting data folders..')
-        supported_datasets = ['LJSpeech-1.0', 'LJSpeech-1.1', 'M-AILABS']
+        supported_datasets = ['LJSpeech-1.0', 'LJSpeech-1.1', 'M-AILABS', 'USA_Politician']
         if args.dataset not in supported_datasets:
                 raise ValueError('dataset value entered {} does not belong to supported datasets: {}'.format(
                         args.dataset, supported_datasets))
@@ -72,6 +72,14 @@ def norm_data(args):
                                         supported_books))
 
                         return [os.path.join(path, args.book)]
+        
+        
+        if args.dataset == 'USA_Politician':
+            supported_politician = ['bill-clinton', 'donald-trump', 'hillary-clinton', 'obama']
+            if args.politician not in supported_politician:
+                raise ValueError('Please enter a valid USA politician! \n{}'.format(
+                                supported_politician))
+            return [os.path.join(args.base_dir, 'USA_Politician/data/', args.politician, 'data/')] 
 
 
 def run_preprocess(args, hparams):
@@ -87,12 +95,13 @@ def main():
         parser.add_argument('--base_dir', default='DATA')
         parser.add_argument('--hparams', default='',
                 help='Hyperparameter overrides as a comma-separated list of name=value pairs')
-        parser.add_argument('--dataset', default='M-AILABS')
+        parser.add_argument('--dataset', default='USA_Politician')
         parser.add_argument('--language', default='en_US')
         parser.add_argument('--voice', default='female')
         parser.add_argument('--reader', default='mary_ann')
         parser.add_argument('--merge_books', type=bool, default=False)
         parser.add_argument('--book', default='northandsouth')
+        parser.add_argument('--politician', default='donald-trump')
         parser.add_argument('--output', default='../training_data')
         parser.add_argument('--n_jobs', type=int, default=cpu_count())
         args = parser.parse_args()
