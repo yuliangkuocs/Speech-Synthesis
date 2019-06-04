@@ -167,11 +167,12 @@ def api_auth_register():
 @app.route('/api/tts/mandarin', methods=['POST'])
 def api_tts_mandarin():
     request_data = request.get_json()
-
+    response_data = {}
     try:
         if 'guid' not in request_data or 'text' not in request_data:
             return response(status_code.DATA_FORMAT_ERROR)
 
+        text = request_data['text']
         guid = request_data['guid']
         user = select_user_by_guid(guid)
 
@@ -179,11 +180,14 @@ def api_tts_mandarin():
             return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
 
         else:
-            isOk = tts(guid)
+            isOk = tts(guid, text=text)
             if not isOk:
                 return response(status_code.UNDEFINED)
 
-            return response(status_code.SUCCESS, response_data='voice.stevenben.nctu.me/static/{0}.wav'.format(guid))
+            wav = 'voice.stevenben.nctu.me/static/{0}.wav'.format(guid)
+            response_data['wav'] = wav
+
+            return response(status_code.SUCCESS, response_data=response_data)
 
     except Exception as err:
         print('[ERROR - api/tts/mandarin]', err)
