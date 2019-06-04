@@ -19,6 +19,7 @@ def tts(guid, text, mode='mandarin'):
                 break
 
         static_path = '/home/steven/Desktop/Speech-Synthesis/web/static/'
+        os.system('rm {1}{0}.wav'.format(guid, static_path))
         os.system('cp result/{0}.wav {1}{0}.wav'.format(guid, static_path))
 
         os.chdir(dir_now)
