@@ -10,14 +10,14 @@ response_message = {200: 'success',
 
 def response(status_code, message=None, response_data=None):
     if response_data and type(response_data) != dict:
-        raise TypeError('response data must be dict')
+        raise TypeError('[ERROR - Response] response data must be dict')
 
     if status_code == StatusCode().DATA_CONTENT_ERROR and not message:
-        raise ValueError('data content error must have message to tell which content is wrong')
+        raise ValueError('[ERROR - Response] data content error must have message to tell which content is wrong')
 
     result = {'status': True if status_code == 200 else False,
               'message': response_message[status_code] if not message else message,
-              'response': response_data if response_data else {}}
+              'data': response_data if response_data else {}}
 
     return jsonify(result), status_code
 

@@ -10,6 +10,7 @@
 
 				myData = {
 					'guid': $('#tts-guid').val(),
+					'wav_name': $('#tts-name').val(),
 					'text': $('#tts-text').val()
 				}
 
@@ -22,6 +23,7 @@
 		            dataType: 'json',
 
 		            success: function(res) {
+		            	console.log(res['response']['wav'])
 		            }
 		        })
     		})
@@ -31,8 +33,9 @@
 <body>
 	<h1>Tacotron Chinese Speech Synthesis</h1>
 	<div>
-		<input id='tts-guid' name="text" type="text" /><br>
-		<input id='tts-text' name="text" type="text" /><br>
+		<p>guid</p><input id='tts-guid' name="guid" type="text" /><br>
+		<p>text</p><input id='tts-text' name="text" type="text" /><br>
+		<p>name</p><input id='tts-name' name="name" type="text" /><br>
 		<input id='tts-submit' type="submit" value="submit" />
 	</div>
 </body>

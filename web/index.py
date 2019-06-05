@@ -1,14 +1,15 @@
 # coding=UTF-8
-import uuid
 from flask import Flask, render_template, url_for, session, redirect, request
 from response import StatusCode, response
-from database.database import *
+from generate_key import *
 from tts import tts
 
 app = Flask(__name__)
 app.secret_key = '7433a508b0a1ade2faea975e'
 
 status_code = StatusCode()
+
+WEB_URL = 'voice.stevenben.nctu.me'
 
 
 @app.route('/')
@@ -62,34 +63,6 @@ def steven():
 
 
 # API
-def generate_guid():
-    '''
-    generate guid for an user
-    :return: str
-    '''
-
-    users = select_users()
-
-    tell = True
-
-    while True:
-        guid = uuid.uuid4()
-
-        if users:
-            for u in users:
-                if guid == u.guid:
-                    tell = False
-                    break
-
-            if not tell:
-                tell = True
-                continue
-
-        break
-
-    return guid
-
-
 # AUTH
 @app.route('/api/auth/login', methods=['POST'])
 def api_auth_login():
@@ -164,30 +137,37 @@ def api_auth_register():
         return response(status_code.UNDEFINED)
 
 
+# TTS
 @app.route('/api/tts/mandarin', methods=['POST'])
 def api_tts_mandarin():
     request_data = request.get_json()
     response_data = {}
+
     try:
-        if 'guid' not in request_data or 'text' not in request_data:
+        if 'guid' not in request_data or 'text' not in request_data or 'wav_name' not in request_data:
             return response(status_code.DATA_FORMAT_ERROR)
 
         text = request_data['text']
         guid = request_data['guid']
+        wav_name = request_data['wav_name']
+
         user = select_user_by_guid(guid)
 
         if not user:
             return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
 
-        else:
-            isOk = tts(guid, text=text)
-            if not isOk:
-                return response(status_code.UNDEFINED)
+        file_name = generate_voice_name()
 
-            wav = 'voice.stevenben.nctu.me/static/{0}.wav'.format(guid)
-            response_data['wav'] = wav
+        tts(guid, text, file_name, 'mandarin_BZNSYP')
 
-            return response(status_code.SUCCESS, response_data=response_data)
+        is_insert = insert_voice(Voice(guid, file_name, wav_name))
+
+        if not is_insert:
+            raise ValueError('[ERROR - api/tts/mandarin] insert voice fail')
+
+        response_data['wav'] = '{0}/static/{1}/mandarin_BZNSYP/{2).wav'.format(WEB_URL, guid, file_name)
+
+        return response(status_code.SUCCESS, response_data=response_data)
 
     except Exception as err:
         print('[ERROR - api/tts/mandarin]', err)

@@ -20,7 +20,8 @@ def create_tables():
     db_cursor.execute(
         '''CREATE TABLE IF NOT EXISTS Voice (
             GUID        TEXT                    NOT NULL,
-            NAME        TEXT                    NOT NULL);
+            WAV_NAME    TEXT                    NOT NULL,
+            FILE_NAME   TEXT                    NOT NULL);
         '''
     )
 
@@ -52,11 +53,12 @@ def sql_to_data(db_users=None, db_voices=None, db_user=None, db_voice=None):
     return None
 
 
+# User
 def select_users():
-    '''
+    """
     select all users
     :return: [User]
-    '''
+    """
 
     db_connect = sqlite3.connect(DATABASE)
     db_cursor = db_connect.cursor()
@@ -71,11 +73,11 @@ def select_users():
 
 
 def select_user_by_id(id):
-    '''
+    """
     select an user by id
     :param id: user id
     :return: User
-    '''
+    """
 
     db_connect = sqlite3.connect(DATABASE)
     db_cursor = db_connect.cursor()
@@ -89,11 +91,11 @@ def select_user_by_id(id):
 
 
 def select_user_by_guid(guid):
-    '''
+    """
     select an user by guid
     :param guid: user guid
     :return: User
-    '''
+    """
 
     db_connect = sqlite3.connect(DATABASE)
     db_cursor = db_connect.cursor()
@@ -107,11 +109,11 @@ def select_user_by_guid(guid):
 
 
 def insert_user(user):
-    '''
+    """
     insert an user into table User
     :param user: User
     :return: Bool
-    '''
+    """
 
     is_insert = True
 
@@ -119,7 +121,8 @@ def insert_user(user):
     db_cursor = db_connect.cursor()
 
     try:
-        db_cursor.execute('INSERT INTO User (GUID, ID, PASSWORD) VALUES (\'%s\', \'%s\', \'%s\');' % (user.guid, user.id, user.password))
+        db_cursor.execute('INSERT INTO User (GUID, ID, PASSWORD) VALUES (\'%s\', \'%s\', \'%s\');' % (
+            user.guid, user.id, user.password))
 
     except sqlite3.Error as err:
         print('[ERROR - DB] Insert an user fail:', err)
@@ -130,3 +133,111 @@ def insert_user(user):
 
     return is_insert
 
+
+# Voice
+def select_voices():
+    """
+    select all voices
+    :return: [Voice]
+    """
+
+    db_connect = sqlite3.connect(DATABASE)
+    db_cursor = db_connect.cursor()
+
+    db_cursor.execute('SELECT * FROM Voice')
+
+    voices = sql_to_data(db_voices=db_cursor.fetchall())
+
+    db_connect.close()
+
+    return voices
+
+
+def select_voices_by_guid(guid):
+    """
+    select all voices owned by the user with guid
+    :param guid: user guid
+    :return: [Voice]
+    """
+
+    db_connect = sqlite3.connect(DATABASE)
+    db_cursor = db_connect.cursor()
+
+    db_cursor.execute('SELECT * FROM Voice WHERE GUID = \'%s\'' % guid)
+
+    voices = sql_to_data(db_voices=db_cursor.fetchall())
+
+    db_connect.close()
+
+    return voices
+
+
+def select_voice_by_filename_and_guid(file_name, guid):
+    """
+    select a voice with the file_name owned by the user with guid
+    :param file_name: voice file_name
+    :param guid: user guid
+    :return: Voice
+    """
+
+    db_connect = sqlite3.connect(DATABASE)
+    db_cursor = db_connect.cursor()
+
+    db_cursor.execute('SELECT * FROM Voice WHERE GUID = \'%s\' AND FILE_NAME =  \'%s\'' % (guid, file_name))
+    voice = sql_to_data(db_voice=db_cursor.fetchone())
+
+    db_connect.close()
+
+    return voice
+
+
+def insert_voice(voice):
+    """
+    insert an voice into table Voice
+    :param voice: Voice
+    :return: Bool
+    """
+
+    is_insert = True
+
+    db_connect = sqlite3.connect(DATABASE)
+    db_cursor = db_connect.cursor()
+
+    try:
+        db_cursor.execute('INSERT INTO Voice (GUID, FILE_NAME, WAV_NAME) VALUES (\'%s\', \'%s\', \'%s\');' % (
+            voice.guid, voice.file_name, voice.wav_name))
+
+    except sqlite3.Error as err:
+        print('[ERROR - DB] Insert an voice fail:', err)
+        is_insert = False
+
+    db_connect.commit()
+    db_connect.close()
+
+    return is_insert
+
+
+def delete_voice_by_filename_and_guid(file_name, guid):
+    """
+    delete a voice with the file_name owned by the user with guid
+    :param file_name: voice file_name
+    :param guid: user guid
+    :return: Bool
+    """
+
+    is_delete = True
+
+    db_connect = sqlite3.connect(DATABASE)
+    db_cursor = db_connect.cursor()
+
+    try:
+        db_cursor.execute('DELETE FROM Voice WHERE GUID = \'%s\' AND FILE_NAME = \'%s\'' % (guid, file_name))
+
+    except sqlite3.Error as err:
+        print('[ERROR - DB] Delete an voice fail:', err)
+        is_delete = False
+
+    db_connect.commit()
+    db_connect.close()
+
+    return is_delete
