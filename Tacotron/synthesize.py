@@ -26,6 +26,7 @@ def get_sentences(args):
         if args.text_list != '':
                 with open(args.text_list, 'rb') as f:
                         sentences = list(map(lambda l: l.decode("utf-8")[:-1], f.readlines()))
+        '''
         else:
                 #sentences = hparams.sentences
                 print("===== Not giving '--text_list' param. Please input sentences: =====`")
@@ -37,6 +38,7 @@ def get_sentences(args):
                         sentences.append(input_sentence)
                     else:
                         break
+        '''
         return sentences
 
 def synthesize(args, hparams, taco_checkpoint, wave_checkpoint, sentences):
