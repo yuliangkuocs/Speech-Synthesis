@@ -12,7 +12,7 @@ def generate_guid():
         guid = uuid.uuid4()
 
         if not select_user_by_guid(guid):
-            return guid
+            return str(guid)
 
 
 def generate_voice_name(guid):
@@ -26,4 +26,4 @@ def generate_voice_name(guid):
         file_name = uuid.uuid4()
 
         if not select_voice_by_filename_and_guid(file_name, guid):
-            return file_name
+            return str(file_name)

@@ -156,7 +156,7 @@ def api_tts_mandarin():
         if not user:
             return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
 
-        file_name = generate_voice_name()
+        file_name = generate_voice_name(guid)
 
         tts(guid, text, file_name, 'mandarin_BZNSYP')
 
@@ -165,7 +165,7 @@ def api_tts_mandarin():
         if not is_insert:
             raise ValueError('[ERROR - api/tts/mandarin] insert voice fail')
 
-        response_data['wav'] = '{0}/static/{1}/mandarin_BZNSYP/{2).wav'.format(WEB_URL, guid, file_name)
+        response_data['wav'] = '{0}/static/{1}/mandarin_BZNSYP/{2}.wav'.format(WEB_URL, guid, file_name)
 
         return response(status_code.SUCCESS, response_data=response_data)
 
@@ -175,5 +175,6 @@ def api_tts_mandarin():
 
 
 if __name__ == '__main__':
+    print('create tables')
     create_tables()
     app.run(host='0.0.0.0', port=8080)

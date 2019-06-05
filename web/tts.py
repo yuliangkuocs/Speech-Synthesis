@@ -25,9 +25,10 @@ def tts(guid, text, file_name, mode):
     is_timeout = True
 
     if check_synthesis(guid):
-        file_path = os.path.join(PATH['web_static'], guid, mode, file_name, '.wav')
+        file_dir_path = os.path.join(PATH['web_static'], guid, mode)
 
-        os.system('cp result/{0}.wav {1}'.format(guid, file_path))
+        os.system('mkdir -p {0}'.format(file_dir_path))
+        os.system('cp result/{0}.wav {1}'.format(guid, file_dir_path + '/' + file_name + '.wav'))
         os.system('rm result/{0}.wav'.format(guid))
 
     else:
