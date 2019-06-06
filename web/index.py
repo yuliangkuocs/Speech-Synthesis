@@ -3,6 +3,7 @@ from flask import Flask, render_template, url_for, session, redirect, request
 from response import StatusCode, response
 from generate_key import *
 from voice import *
+from user import *
 from tts import tts
 
 app = Flask(__name__)
@@ -151,9 +152,7 @@ def api_tts_mandarin():
         tts_type = request_data['tts_type']
         wav_name = request_data['wav_name']
 
-        user = select_user_by_guid(guid)
-
-        if not user:
+        if not check_user(guid):
             return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
 
         if not check_voice_name(guid, wav_name):
@@ -190,9 +189,7 @@ def api_voice_getAllWav():
 
         guid = request_data['guid']
 
-        user = select_user_by_guid(guid)
-
-        if not user:
+        if not check_user(guid):
             return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
 
         voices = select_voices_by_guid(guid)
@@ -202,6 +199,32 @@ def api_voice_getAllWav():
                 response_data['wavs'][voice.wav_name] = get_voice_url(voice)
 
         return response(status_code.SUCCESS, response_data=response_data)
+
+    except Exception as err:
+        print('[ERROR - api/voice/getAllWav]', err)
+        return response(status_code.UNDEFINED)
+
+
+@app.route('/api/voice/delete', methods=['POST'])
+def api_voice_delete():
+    request_data = request.get_json()
+
+    try:
+        if 'guid' not in request_data or 'wav_name' not in request_data:
+            return response(status_code.DATA_FORMAT_ERROR)
+
+        guid = request_data['guid']
+        wav_name = request_data['wav_name']
+
+        if not check_user(guid):
+            return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
+
+        voice = select_voice_by_wavname_and_guid(wav_name, guid)
+
+        if not delete_voice(voice):
+            raise IndexError('delete voice fail')
+
+        return response(status_code.SUCCESS)
 
     except Exception as err:
         print('[ERROR - api/voice/getAllWav]', err)

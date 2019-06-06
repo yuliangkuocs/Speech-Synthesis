@@ -135,6 +135,31 @@ def insert_user(user):
     return is_insert
 
 
+def delete_user_by_guid(guid):
+    """
+    delete an user from table User
+    :param guid: user guid
+    :return: Bool
+    """
+
+    is_delete = True
+
+    db_connect = sqlite3.connect(DATABASE)
+    db_cursor = db_connect.cursor()
+
+    try:
+        db_cursor.execute('DELETE FROM User WHERE GUID = \'%s\'' % guid)
+
+    except sqlite3.Error as err:
+        print('[ERROR - DB] Delete user fail:', err)
+        is_delete = False
+
+    db_connect.commit()
+    db_connect.close()
+
+    return is_delete
+
+
 # Voice
 def select_voices():
     """
@@ -185,6 +210,25 @@ def select_voice_by_filename_and_guid(file_name, guid):
     db_cursor = db_connect.cursor()
 
     db_cursor.execute('SELECT * FROM Voice WHERE GUID = \'%s\' AND FILE_NAME =  \'%s\'' % (guid, file_name))
+    voice = sql_to_data(db_voice=db_cursor.fetchone())
+
+    db_connect.close()
+
+    return voice
+
+
+def select_voice_by_wavname_and_guid(wav_name, guid):
+    """
+    select a voice with the wav_name owned by the user with guid
+    :param wav_name: voice wav_name
+    :param guid: user guid
+    :return: Voice
+    """
+
+    db_connect = sqlite3.connect(DATABASE)
+    db_cursor = db_connect.cursor()
+
+    db_cursor.execute('SELECT * FROM Voice WHERE GUID = \'%s\' AND WAV_NAME =  \'%s\'' % (guid, wav_name))
     voice = sql_to_data(db_voice=db_cursor.fetchone())
 
     db_connect.close()

@@ -1,6 +1,8 @@
 import os
 from database.database import *
 from database.model import Voice
+from path import PATH
+
 
 WEB_URL = 'voice.stevenben.nctu.me'
 TTS_TYPE = {
@@ -10,8 +12,7 @@ TTS_TYPE = {
 
 
 def get_voice_url(voice):
-    if type(voice) != Voice:
-        raise TypeError('[ERROR voice - get_voice_url] type must be \'Voice\', but get \'{0}\''.format(type(voice)))
+    check_voice_type()
 
     url = os.path.join(WEB_URL, 'static', voice.guid, TTS_TYPE[voice.tts_type], voice.file_name + '.wav')
 
@@ -29,3 +30,24 @@ def check_voice_name(guid, wav_name):
                 return False
 
     return True
+
+
+def delete_voice(voice):
+    try:
+        check_voice_type()
+
+        delete_voice_by_filename_and_guid(voice.file_name, voice.guid)
+
+        file_path = os.path.join(PATH['web_static'], voice.guid, TTS_TYPE[voice.tts_type], voice.file_name + '.wav')
+
+        os.system('rm %s' % file_path)
+    except Exception as err:
+        print('[ERROR - voice] delete voice fail:', err)
+        return False
+
+    return True
+
+
+def check_voice_type(voice):
+    if type(voice) != Voice:
+        raise TypeError('type must be \'Voice\', but get \'{0}\''.format(type(voice)))
