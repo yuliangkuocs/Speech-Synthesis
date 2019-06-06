@@ -11,13 +11,14 @@
 				myData = {
 					'guid': $('#tts-guid').val(),
 					'wav_name': $('#tts-name').val(),
-					'text': $('#tts-text').val()
+					'text': $('#tts-text').val(),
+					'tts_type': 0
 				}
 
 
 		        $.ajax({
 		            type: 'POST',
-		            url: '/api/tts/mandarin',
+		            url: '/api/voice/tts',
 		            data: JSON.stringify(myData),
 		            contentType: "application/json",
 		            dataType: 'json',

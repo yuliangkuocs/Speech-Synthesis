@@ -205,7 +205,7 @@ def insert_voice(voice):
     db_cursor = db_connect.cursor()
 
     try:
-        db_cursor.execute('INSERT INTO Voice (GUID, FILE_NAME, WAV_NAME, TTS_TYPE) VALUES (\'%s\', \'%s\', \'%s\' %d);' % (
+        db_cursor.execute('INSERT INTO Voice (GUID, FILE_NAME, WAV_NAME, TTS_TYPE) VALUES (\'%s\', \'%s\', \'%s\', %d);' % (
             voice.guid, voice.file_name, voice.wav_name, voice.tts_type))
 
     except sqlite3.Error as err:
