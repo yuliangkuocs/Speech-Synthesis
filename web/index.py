@@ -182,7 +182,7 @@ def api_tts_mandarin():
 @app.route('/api/voice/getAllWav', methods=['POST'])
 def api_voice_getAllWav():
     request_data = request.get_json()
-    response_data = {'wavs': []}
+    response_data = {'wavs': {}}
 
     try:
         if 'guid' not in request_data:
@@ -200,6 +200,8 @@ def api_voice_getAllWav():
         if voices:
             for voice in voices:
                 response_data['wavs'][voice.wav_name] = get_voice_url(voice)
+
+        return response(status_code.SUCCESS, response_data=response_data)
 
     except Exception as err:
         print('[ERROR - api/voice/getAllWav]', err)
