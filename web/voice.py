@@ -12,7 +12,7 @@ TTS_TYPE = {
 
 
 def get_voice_url(voice):
-    check_voice_type()
+    check_voice_type(voice)
 
     url = os.path.join(WEB_URL, 'static', voice.guid, TTS_TYPE[voice.tts_type], voice.file_name + '.wav')
 
@@ -34,7 +34,7 @@ def check_voice_name(guid, wav_name):
 
 def delete_voice(voice):
     try:
-        check_voice_type()
+        check_voice_type(voice)
 
         delete_voice_by_filename_and_guid(voice.file_name, voice.guid)
 
