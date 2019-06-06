@@ -156,6 +156,9 @@ def api_tts_mandarin():
         if not user:
             return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
 
+        if not check_voice_name(guid, wav_name):
+            return response(status_code.DATA_CONTENT_ERROR, message='wav name already exists')
+
         file_name = generate_voice_name(guid)
 
         tts(guid, text, file_name, TTS_TYPE[tts_type])
@@ -176,31 +179,31 @@ def api_tts_mandarin():
         return response(status_code.UNDEFINED)
 
 
-# @app.route('/api/voice/getAllWav', methods=['POST'])
-# def api_voice_getAllWav():
-#     request_data = request.get_json()
-#     response_data = {'wav': []}
-#
-#     try:
-#         if 'guid' not in request_data:
-#             return response(status_code.DATA_FORMAT_ERROR)
-#
-#         guid = request_data['guid']
-#
-#         user = select_user_by_guid(guid)
-#
-#         if not user:
-#             return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
-#
-#         voices = select_voices_by_guid(guid)
-#
-#         if voices:
-#             for voice in voices:
-#
-#
-#     except Exception as err:
-#         print('[ERROR - api/tts/mandarin]', err)
-#         return response(status_code.UNDEFINED)
+@app.route('/api/voice/getAllWav', methods=['POST'])
+def api_voice_getAllWav():
+    request_data = request.get_json()
+    response_data = {'wavs': []}
+
+    try:
+        if 'guid' not in request_data:
+            return response(status_code.DATA_FORMAT_ERROR)
+
+        guid = request_data['guid']
+
+        user = select_user_by_guid(guid)
+
+        if not user:
+            return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
+
+        voices = select_voices_by_guid(guid)
+
+        if voices:
+            for voice in voices:
+                response_data['wavs'][voice.wav_name] = get_voice_url(voice)
+
+    except Exception as err:
+        print('[ERROR - api/voice/getAllWav]', err)
+        return response(status_code.UNDEFINED)
 
 
 if __name__ == '__main__':

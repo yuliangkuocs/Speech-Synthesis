@@ -1,4 +1,5 @@
 import os
+from database.database import *
 from database.model import Voice
 
 WEB_URL = 'voice.stevenben.nctu.me'
@@ -15,3 +16,14 @@ def get_voice_url(voice):
     url = os.path.join(WEB_URL, 'static', voice.guid, TTS_TYPE[voice.tts_type], voice.file_name + '.wav')
 
     return url
+
+
+def check_voice_name(guid, wav_name):
+    voices = select_voices_by_guid(guid)
+
+    if voices:
+        for v in voices:
+            if wav_name == v.wav_name:
+                return False
+
+    return True

@@ -20,8 +20,8 @@ def create_tables():
     db_cursor.execute(
         '''CREATE TABLE IF NOT EXISTS Voice (
             GUID        TEXT                    NOT NULL,
-            WAV_NAME    TEXT                    NOT NULL,
             FILE_NAME   TEXT                    NOT NULL,
+            WAV_NAME    TEXT                    NOT NULL,
             TTS_TYPE    INT                     NOT NULL);
         '''
     )
@@ -37,7 +37,7 @@ def sql_to_data(db_users=None, db_voices=None, db_user=None, db_voice=None):
         return users
 
     elif db_voices:
-        voices = [Voice(db_voice[0], db_voice[1]) for db_voice in db_voices]
+        voices = [Voice(db_voice[0], db_voice[1], db_voice[2], db_voice[3]) for db_voice in db_voices]
 
         return voices
 
@@ -47,7 +47,7 @@ def sql_to_data(db_users=None, db_voices=None, db_user=None, db_voice=None):
         return user
 
     elif db_voice:
-        voice = Voice(db_voice[0], db_voice[1])
+        voice = Voice(db_voice[0], db_voice[1], db_voice[2], db_voice[3])
 
         return voice
 
@@ -236,6 +236,31 @@ def delete_voice_by_filename_and_guid(file_name, guid):
 
     except sqlite3.Error as err:
         print('[ERROR - DB] Delete an voice fail:', err)
+        is_delete = False
+
+    db_connect.commit()
+    db_connect.close()
+
+    return is_delete
+
+
+def delete_voices_by_guid(guid):
+    """
+    delete a voice with the file_name owned by the user with guid
+    :param guid: user guid
+    :return: Bool
+    """
+
+    is_delete = True
+
+    db_connect = sqlite3.connect(DATABASE)
+    db_cursor = db_connect.cursor()
+
+    try:
+        db_cursor.execute('DELETE FROM Voice WHERE GUID = \'%s\'' % guid)
+
+    except sqlite3.Error as err:
+        print('[ERROR - DB] Delete voices fail:', err)
         is_delete = False
 
     db_connect.commit()
