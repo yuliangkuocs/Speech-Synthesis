@@ -20,9 +20,11 @@ def get_voice_url(voice):
 
 def check_voice_name(guid, wav_name):
     voices = select_voices_by_guid(guid)
+    print('wav_name =', wav_name)
 
     if voices:
         for v in voices:
+            print('voice wav name =', v.wav_name)
             if wav_name == v.wav_name:
                 return False
 
