@@ -51,6 +51,29 @@
 		        })
     		})
     	})
+
+    	$(function() {
+    		$('#delete-submit').click(function() {
+
+				myData = {
+					'guid': $('#delete-guid').val()
+					'wav_name': $('#delete-wav').val()
+				}
+
+
+		        $.ajax({
+		            type: 'POST',
+		            url: '/api/voice/delete',
+		            data: JSON.stringify(myData),
+		            contentType: "application/json",
+		            dataType: 'json',
+
+		            success: function(res) {
+		            	console.log(res['response'])
+		            }
+		        })
+    		})
+    	})
 	</script>
 </head>
 <body>
@@ -66,6 +89,13 @@
 		<h3>get all my wavs</h3>
 		<p>guid</p><input id='wav-guid' name="guid" type="text" /><br>
 		<input id='wav-submit' type="submit" value="submit" />
+	</div>
+
+	<div>
+		<h3>delete my wav</h3>
+		<p>guid</p><input id='delete-guid' name="guid" type="text" /><br>
+		<p>guid</p><input id='delete-wav' name="wav name" type="text" /><br>
+		<input id='delete-submit' type="submit" value="submit" />
 	</div>
 </body>
 </html>
