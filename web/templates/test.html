@@ -29,6 +29,28 @@
 		        })
     		})
     	})
+
+    	$(function() {
+    		$('#wav-submit').click(function() {
+
+				myData = {
+					'guid': $('#wav-guid').val()
+				}
+
+
+		        $.ajax({
+		            type: 'POST',
+		            url: '/api/voice/getAllWav',
+		            data: JSON.stringify(myData),
+		            contentType: "application/json",
+		            dataType: 'json',
+
+		            success: function(res) {
+		            	console.log(res['response']['wavs'])
+		            }
+		        })
+    		})
+    	})
 	</script>
 </head>
 <body>
@@ -38,6 +60,12 @@
 		<p>text</p><input id='tts-text' name="text" type="text" /><br>
 		<p>name</p><input id='tts-name' name="name" type="text" /><br>
 		<input id='tts-submit' type="submit" value="submit" />
+	</div>
+
+	<div>
+		<h3>get all my wavs</h3>
+		<p>guid</p><input id='wav-guid' name="guid" type="text" /><br>
+		<input id='wav-submit' type="submit" value="submit" />
 	</div>
 </body>
 </html>
