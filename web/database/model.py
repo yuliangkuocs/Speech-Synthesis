@@ -7,7 +7,8 @@ class User:
 
 
 class Voice:
-    def __init__(self, guid=None, file_name=None, wav_name=None):
+    def __init__(self, guid=None, file_name=None, wav_name=None, tts_type=None):
         self.guid = guid
         self.file_name = file_name
         self.wav_name = wav_name
+        self.tts_type = tts_type

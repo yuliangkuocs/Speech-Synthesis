@@ -21,7 +21,8 @@ def create_tables():
         '''CREATE TABLE IF NOT EXISTS Voice (
             GUID        TEXT                    NOT NULL,
             WAV_NAME    TEXT                    NOT NULL,
-            FILE_NAME   TEXT                    NOT NULL);
+            FILE_NAME   TEXT                    NOT NULL,
+            TTS_TYPE    INT                     NOT NULL);
         '''
     )
 
@@ -204,8 +205,8 @@ def insert_voice(voice):
     db_cursor = db_connect.cursor()
 
     try:
-        db_cursor.execute('INSERT INTO Voice (GUID, FILE_NAME, WAV_NAME) VALUES (\'%s\', \'%s\', \'%s\');' % (
-            voice.guid, voice.file_name, voice.wav_name))
+        db_cursor.execute('INSERT INTO Voice (GUID, FILE_NAME, WAV_NAME, TTS_TYPE) VALUES (\'%s\', \'%s\', \'%s\' %d);' % (
+            voice.guid, voice.file_name, voice.wav_name, voice.tts_type))
 
     except sqlite3.Error as err:
         print('[ERROR - DB] Insert an voice fail:', err)

@@ -2,14 +2,13 @@
 from flask import Flask, render_template, url_for, session, redirect, request
 from response import StatusCode, response
 from generate_key import *
+from voice import *
 from tts import tts
 
 app = Flask(__name__)
 app.secret_key = '7433a508b0a1ade2faea975e'
 
 status_code = StatusCode()
-
-WEB_URL = 'voice.stevenben.nctu.me'
 
 
 @app.route('/')
@@ -137,18 +136,19 @@ def api_auth_register():
         return response(status_code.UNDEFINED)
 
 
-# TTS
-@app.route('/api/tts/mandarin', methods=['POST'])
+# Voice
+@app.route('/api/voice/tts', methods=['POST'])
 def api_tts_mandarin():
     request_data = request.get_json()
     response_data = {}
 
     try:
-        if 'guid' not in request_data or 'text' not in request_data or 'wav_name' not in request_data:
+        if 'guid' not in request_data or 'text' not in request_data or 'wav_name' not in request_data or 'tts_type' not in request_data:
             return response(status_code.DATA_FORMAT_ERROR)
 
         text = request_data['text']
         guid = request_data['guid']
+        tts_type = request_data['tts_type']
         wav_name = request_data['wav_name']
 
         user = select_user_by_guid(guid)
@@ -158,20 +158,49 @@ def api_tts_mandarin():
 
         file_name = generate_voice_name(guid)
 
-        tts(guid, text, file_name, 'mandarin_BZNSYP')
+        tts(guid, text, file_name, TTS_TYPE[tts_type])
 
-        is_insert = insert_voice(Voice(guid, file_name, wav_name))
+        voice = Voice(guid, file_name, wav_name, tts_type)
+
+        is_insert = insert_voice(voice)
 
         if not is_insert:
-            raise ValueError('[ERROR - api/tts/mandarin] insert voice fail')
+            raise ValueError('insert voice fail')
 
-        response_data['wav'] = '{0}/static/{1}/mandarin_BZNSYP/{2}.wav'.format(WEB_URL, guid, file_name)
+        response_data['wav'] = get_voice_url(voice)
 
         return response(status_code.SUCCESS, response_data=response_data)
 
     except Exception as err:
-        print('[ERROR - api/tts/mandarin]', err)
+        print('[ERROR - api/voice/tts]', err)
         return response(status_code.UNDEFINED)
+
+
+# @app.route('/api/voice/getAllWav', methods=['POST'])
+# def api_voice_getAllWav():
+#     request_data = request.get_json()
+#     response_data = {'wav': []}
+#
+#     try:
+#         if 'guid' not in request_data:
+#             return response(status_code.DATA_FORMAT_ERROR)
+#
+#         guid = request_data['guid']
+#
+#         user = select_user_by_guid(guid)
+#
+#         if not user:
+#             return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
+#
+#         voices = select_voices_by_guid(guid)
+#
+#         if voices:
+#             for voice in voices:
+#
+#
+#     except Exception as err:
+#         print('[ERROR - api/tts/mandarin]', err)
+#         return response(status_code.UNDEFINED)
 
 
 if __name__ == '__main__':
