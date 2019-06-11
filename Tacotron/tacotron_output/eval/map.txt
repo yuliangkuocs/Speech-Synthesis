@@ -1,1 +1,0 @@
-I like watching TV series which type is horrible.|tacotron_output/eval/speech-mel-00001.npy
