@@ -143,39 +143,39 @@ def api_tts_mandarin():
     request_data = request.get_json()
     response_data = {}
 
-    try:
-        if 'guid' not in request_data or 'text' not in request_data or 'wav_name' not in request_data or 'tts_type' not in request_data:
-            return response(status_code.DATA_FORMAT_ERROR)
+    # try:
+    if 'guid' not in request_data or 'text' not in request_data or 'wav_name' not in request_data or 'tts_type' not in request_data:
+        return response(status_code.DATA_FORMAT_ERROR)
 
-        text = request_data['text']
-        guid = request_data['guid']
-        tts_type = request_data['tts_type']
-        wav_name = request_data['wav_name']
+    text = request_data['text']
+    guid = request_data['guid']
+    tts_type = request_data['tts_type']
+    wav_name = request_data['wav_name']
 
-        if not check_user(guid):
-            return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
+    if not check_user(guid):
+        return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
 
-        if not check_voice_name(guid, wav_name):
-            return response(status_code.DATA_CONTENT_ERROR, message='wav name already exists')
+    if not check_voice_name(guid, wav_name):
+        return response(status_code.DATA_CONTENT_ERROR, message='wav name already exists')
 
-        file_name = generate_voice_name(guid)
+    file_name = generate_voice_name(guid)
 
-        tts(guid, text, file_name, TTS_TYPE[tts_type])
+    tts(guid, text, file_name, TTS_TYPE[tts_type])
 
-        voice = Voice(guid, file_name, wav_name, tts_type)
+    voice = Voice(guid, file_name, wav_name, tts_type)
 
-        is_insert = insert_voice(voice)
+    is_insert = insert_voice(voice)
 
-        if not is_insert:
-            raise ValueError('insert voice fail')
+    if not is_insert:
+        raise ValueError('insert voice fail')
 
-        response_data['wav'] = get_voice_url(voice)
+    response_data['wav'] = get_voice_url(voice)
 
-        return response(status_code.SUCCESS, response_data=response_data)
+    return response(status_code.SUCCESS, response_data=response_data)
 
-    except Exception as err:
-        print('[ERROR - api/voice/tts]', err)
-        return response(status_code.UNDEFINED)
+    # except Exception as err:
+    #     print('[ERROR - api/voice/tts]', err)
+    #     return response(status_code.UNDEFINED)
 
 
 @app.route('/api/voice/getAllWav', methods=['POST'])

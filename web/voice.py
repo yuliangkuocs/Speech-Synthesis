@@ -4,7 +4,7 @@ from database.model import Voice
 from path import PATH
 
 
-WEB_URL = 'voice.stevenben.nctu.me'
+WEB_URL = 'http://voice.stevenben.nctu.me'
 TTS_TYPE = {
     0: 'mandarin_BZNSYP',
     1: 'english_LJSpeech'

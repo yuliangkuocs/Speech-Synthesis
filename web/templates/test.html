@@ -8,95 +8,117 @@
 		$(function() {
     		$('#tts-submit').click(function() {
 
-				myData = {
-					'guid': $('#tts-guid').val(),
-					'wav_name': $('#tts-name').val(),
-					'text': $('#tts-text').val(),
-					'tts_type': 0
-				}
+				text = $('#tts-text').val()
+				wavName = $('#tts-name').val()
+				ttsType = $('#tts-select').val()
 
-
-		        $.ajax({
-		            type: 'POST',
-		            url: '/api/voice/tts',
-		            data: JSON.stringify(myData),
-		            contentType: "application/json",
-		            dataType: 'json',
-
-		            success: function(res) {
-		            	console.log(res['response']['wav'])
-		            }
-		        })
+				synthesizeWav(text, wavName, ttsType)
     		})
     	})
 
-    	$(function() {
-    		$('#wav-submit').click(function() {
+    	function synthesizeWav(text, wavName, ttsType) {
+    		$('#mywav').hide()
+    		
+			myData = {
+				'guid': sessionStorage['guid'],
+				'wav_name': wavName,
+				'text': text,
+				'tts_type': Number(ttsType)
+			}
 
-				myData = {
-					'guid': $('#wav-guid').val()
-				}
+	        $.ajax({
+	            type: 'POST',
+	            url: '/api/voice/tts',
+	            data: JSON.stringify(myData),
+	            contentType: "application/json",
+	            dataType: 'json',
+
+	            success: function(res) {
+            		$('#mywav-source').attr('src', res['data']['wav'])
+            		$('#mywav').show()
+            		$('#mywav-fail').hide()
+            		$('#mywav-player')[0].load()
+            		$('#mywav-name').text(wavName)
+	            },
+
+	            error: function(xhr, status, error) {
+	            	$('#mywav').hide()
+            		$('#mywav-fail').show()
+            		$('#mywav-fail').html(xhr.responseJSON['message'])
+	            }
+	        })
+    	}
+
+    	function getAllWav() {
+    		myData = {
+				'guid': sessionStorage['guid']
+			}
 
 
-		        $.ajax({
-		            type: 'POST',
-		            url: '/api/voice/getAllWav',
-		            data: JSON.stringify(myData),
-		            contentType: "application/json",
-		            dataType: 'json',
+	        $.ajax({
+	            type: 'POST',
+	            url: '/api/voice/getAllWav',
+	            data: JSON.stringify(myData),
+	            contentType: "application/json",
+	            dataType: 'json',
 
-		            success: function(res) {
-		            	console.log(res['response']['wavs'])
-		            }
-		        })
-    		})
-    	})
+	            success: function(res) {
+	            	if (res['status']) {
+	            		return res['response']['wavs']
+	            	} else {
+	            		return false
+	            	}
+	            }
+	        })
+    	}
 
-    	$(function() {
-    		$('#delete-submit').click(function() {
-
-				myData = {
-					'guid': $('#delete-guid').val(),
-					'wav_name': $('#delete-wav').val()
-				}
+    	function deleteWav(wavName) {
+    		myData = {
+				'guid': sessionStorage['guid'],
+				'wav_name': wavName
+			}
 
 
-		        $.ajax({
-		            type: 'POST',
-		            url: '/api/voice/delete',
-		            data: JSON.stringify(myData),
-		            contentType: "application/json",
-		            dataType: 'json',
+	        $.ajax({
+	            type: 'POST',
+	            url: '/api/voice/delete',
+	            data: JSON.stringify(myData),
+	            contentType: "application/json",
+	            dataType: 'json',
 
-		            success: function(res) {
-		            	console.log(res['response'])
-		            }
-		        })
-    		})
-    	})
+	            success: function(res) {
+	            	return res['status']
+	            }
+	        })
+    	}
 	</script>
 </head>
 <body>
-	<h1>Tacotron Chinese Speech Synthesis</h1>
+	<h1>Speech Synthesis</h1>
 	<div>
-		<p>guid</p><input id='tts-guid' name="guid" type="text" /><br>
-		<p>text</p><input id='tts-text' name="text" type="text" /><br>
 		<p>name</p><input id='tts-name' name="name" type="text" /><br>
+		<p>text</p><input id='tts-text' name="text" type="text" /><br>
+		<select id="tts-select">
+			<option value=0>Mandarin(BZNSYP)</option>
+			<option value=1>mary_ann(M-AILABS)</option>
+		</select><br>
 		<input id='tts-submit' type="submit" value="submit" />
 	</div>
 
-	<div>
-		<h3>get all my wavs</h3>
-		<p>guid</p><input id='wav-guid' name="guid" type="text" /><br>
-		<input id='wav-submit' type="submit" value="submit" />
+	<div class="wav-list">
+
 	</div>
 
-	<div>
-		<h3>delete my wav</h3>
-		<p>guid</p><input id='delete-guid' name="guid" type="text" /><br>
-		<p>wav name</p><input id='delete-wav' name="wav name" type="text" /><br>
-		<input id='delete-submit' type="submit" value="submit" />
+	<div id="mywav" style="display: none">
+		<br>
+		<h3 id="mywav-name">my synthsis wav</h3>
+		<audio id="mywav-player" controls>
+			<source id="mywav-source" src="" type="audio/wav">
+		</audio>
+		
 	</div>
+	<br>
+	<div id="mywav-fail" style="background-color: red; color: white"></div>
 </body>
 </html>
 	

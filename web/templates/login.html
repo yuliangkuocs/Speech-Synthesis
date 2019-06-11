@@ -21,6 +21,13 @@
 		            dataType: 'json',
 
 		            success: function(res) {
+		            	if (res['status']) {
+		            		window.location.href = 'http://voice.stevenben.nctu.me/test'
+		            		sessionStorage['guid'] = res['data']['guid']
+		            	}
+		     			else {
+		     				console.log(res)
+		     			}
 		            }
 		        })
     		})

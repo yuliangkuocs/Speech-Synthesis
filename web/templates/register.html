@@ -22,7 +22,12 @@
 		            dataType: 'json',
 
 		            success: function(res) {
-		                console.log(res)
+		            	if (res['status']) {
+		            		window.location.href = 'http://voice.stevenben.nctu.me/login'
+		            	}
+		     			else {
+		     				console.log(res)
+		     			}
 		            }
 		        })
     		})
