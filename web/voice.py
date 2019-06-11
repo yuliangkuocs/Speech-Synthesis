@@ -49,13 +49,18 @@ def delete_user_voice(voice):
     return True
 
 
-# def delete_user_voices(guid):
-#     if not delete_voices_by_guid(guid):
-#         return False
-#     else:
-#         for key, value in TTS_TYPE:
-#
-#         file_path = os.path.join(PATH['web_static'], guid, )
+def delete_user_voices(guid):
+    if not delete_voices_by_guid(guid):
+        return False
+    else:
+        dir_now = os.path.abspath(os.path.curdir)
+
+        os.chdir(PATH['web_static'])
+        print('guid =', guid)
+        os.system('rm -rf %s' % guid)
+
+        os.chdir(dir_now)
+    return True
 
 
 def check_voice_type(voice):

@@ -11,12 +11,22 @@
 
 		$(function() {
     		$('#tts-submit').click(function() {
+    			loadMessage(true)
 
 				text = $('#tts-text').val()
 				wavName = $('#tts-name').val()
 				ttsType = $('#tts-select').val()
 
 				synthesizeWav(text, wavName, ttsType)
+    		})
+    	})
+
+    	$(function() {
+    		$('#delete-all-wav').click(function() {
+
+				deleteAllWav()
+
+				// location.reload()
     		})
     	})
 
@@ -55,10 +65,12 @@
             		$('#tts-wav-player')[0].load()
             		$('#tts-wav-name').text(wavName)
             		$('#tts-wav').show()
+            		loadMessage(false)
 	            },
 
 	            error: function(xhr, status, error) {
             		failMessage(true, xhr.responseJSON['message'])
+            		loadMessage(false)
 	            }
 	        })
     	}
@@ -100,7 +112,7 @@
 	            dataType: 'json',
 
 	            success: function(res) {
-	            	return res['status']
+	            	console.log(res)
 	            }
 	        })
     	}
@@ -126,6 +138,7 @@
 </head>
 <body>
 	<h1>My Wav List</h1>
+	<button id='delete-all-wav'>Delete all my wavs</button>
 	<div id="wav-list">
 	</div>
 

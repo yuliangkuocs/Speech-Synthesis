@@ -221,7 +221,7 @@ def api_voice_delete():
 
         voice = select_voice_by_wavname_and_guid(wav_name, guid)
 
-        if not delete_voice(voice):
+        if not delete_user_voice(voice):
             raise IndexError('delete voice fail')
 
         return response(status_code.SUCCESS)
@@ -244,7 +244,7 @@ def api_voice_deleteAllWav():
         if not check_user(guid):
             return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
 
-        if not delete_voices_by_guid(guid):
+        if not delete_user_voices(guid):
             raise IndexError('delete voices fail')
 
         return response(status_code.SUCCESS)
