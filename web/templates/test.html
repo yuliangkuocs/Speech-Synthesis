@@ -5,6 +5,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<script type="text/javascript">
 
+		myWavDiv = '<div class="myWav"><h3 class="myWav-name"></h3><audio class="myWav-player" controls><source class="myWav-source" src="" type="audio/wav"></audio></div><br>'
+
+		getAllWav()
+
 		$(function() {
     		$('#tts-submit').click(function() {
 
@@ -15,6 +19,18 @@
 				synthesizeWav(text, wavName, ttsType)
     		})
     	})
+
+    	function setWavList(wavsObject) {
+    		console.log(wavsObject)
+
+    		for (const [key, value] of Object.entries(wavsObject)) {
+    			$('#wav-list').append(myWavDiv)
+
+    			$($('.myWav-name')[$('.myWav-name').length - 1]).text(key)
+    			$($('.myWav-source')[$('.myWav-name').length - 1]).attr('src', value)
+    			$($('.myWav-player')[$('.myWav-name').length - 1])[0].load()
+    		}
+    	}
 
     	function synthesizeWav(text, wavName, ttsType) {
     		$('#mywav').hide()
@@ -61,21 +77,24 @@
 	            dataType: 'json',
 
 	            success: function(res) {
-	            	return res['response']['wavs']
+	            	setWavList(res['data']['wavs'])
+	            },
+
+	            error: function(xhr, status, error) {
+            		console.log(xhr.responseJSON['message'])
 	            }
 	        })
     	}
 
-    	function deleteWav(wavName) {
+    	function deleteAllWav() {
     		myData = {
-				'guid': sessionStorage['guid'],
-				'wav_name': wavName
+				'guid': sessionStorage['guid']
 			}
 
 
 	        $.ajax({
 	            type: 'POST',
-	            url: '/api/voice/delete',
+	            url: '/api/voice/deleteAllWav',
 	            data: JSON.stringify(myData),
 	            contentType: "application/json",
 	            dataType: 'json',
@@ -106,6 +125,10 @@
 	</script>
 </head>
 <body>
+	<h1>My Wav List</h1>
+	<div id="wav-list">
+	</div>
+
 	<h1>Speech Synthesis</h1>
 	<div>
 		<p>name</p><input id='tts-name' name="name" type="text" /><br>
@@ -117,9 +140,7 @@
 		<input id='tts-submit' type="submit" value="submit" />
 	</div>
 
-	<div class="wav-list">
-
-	</div>
+	
 
 	<div id="tts-wav" style="display: none">
 		<br>
