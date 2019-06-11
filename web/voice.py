@@ -7,7 +7,8 @@ from path import PATH
 WEB_URL = 'http://voice.stevenben.nctu.me'
 TTS_TYPE = {
     0: 'mandarin_BZNSYP',
-    1: 'M_AILABS_mary_ann'
+    1: 'english_LJSpeech',
+    2: 'M_AILABS_mary_ann'
 }
 
 
@@ -32,7 +33,7 @@ def check_voice_name(guid, wav_name):
     return True
 
 
-def delete_voice(voice):
+def delete_user_voice(voice):
     try:
         check_voice_type(voice)
 
@@ -46,6 +47,15 @@ def delete_voice(voice):
         return False
 
     return True
+
+
+# def delete_user_voices(guid):
+#     if not delete_voices_by_guid(guid):
+#         return False
+#     else:
+#         for key, value in TTS_TYPE:
+#
+#         file_path = os.path.join(PATH['web_static'], guid, )
 
 
 def check_voice_type(voice):

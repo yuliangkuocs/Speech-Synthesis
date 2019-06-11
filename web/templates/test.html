@@ -34,17 +34,15 @@
 	            dataType: 'json',
 
 	            success: function(res) {
-            		$('#mywav-source').attr('src', res['data']['wav'])
-            		$('#mywav').show()
-            		$('#mywav-fail').hide()
-            		$('#mywav-player')[0].load()
-            		$('#mywav-name').text(wavName)
+            		$('#tts-wav-source').attr('src', res['data']['wav'])
+            		$('#tts-wav-player')[0].load()
+            		$('#tts-wav-name').text(wavName)
+            		$('#tts-wav').show()
+            		failMessage(false, '')
 	            },
 
 	            error: function(xhr, status, error) {
-	            	$('#mywav').hide()
-            		$('#mywav-fail').show()
-            		$('#mywav-fail').html(xhr.responseJSON['message'])
+            		failMessage(true, xhr.responseJSON['message'])
 	            }
 	        })
     	}
@@ -63,11 +61,7 @@
 	            dataType: 'json',
 
 	            success: function(res) {
-	            	if (res['status']) {
-	            		return res['response']['wavs']
-	            	} else {
-	            		return false
-	            	}
+	            	return res['response']['wavs']
 	            }
 	        })
     	}
@@ -91,6 +85,24 @@
 	            }
 	        })
     	}
+
+    	function loadMessage(tell) {
+    		if (tell) {
+    			$('#load-message').show()
+    		} else {
+    			$('#load-message').hide()
+    		}
+    	}
+
+    	function failMessage(tell, message) {
+    		if (tell) {
+    			$('#fail-message').show()
+    		} else {
+    			$('#fail-message').hide()
+    		}
+
+    		$('#fail-message').html(message)
+    	}
 	</script>
 </head>
 <body>
@@ -100,7 +112,7 @@
 		<p>text</p><input id='tts-text' name="text" type="text" /><br>
 		<select id="tts-select">
 			<option value=0>Mandarin(BZNSYP)</option>
-			<option value=1>mary_ann(M-AILABS)</option>
+			<option value=1>English(LJSpeech)</option>
 		</select><br>
 		<input id='tts-submit' type="submit" value="submit" />
 	</div>
@@ -109,16 +121,19 @@
 
 	</div>
 
-	<div id="mywav" style="display: none">
+	<div id="tts-wav" style="display: none">
 		<br>
-		<h3 id="mywav-name">my synthsis wav</h3>
-		<audio id="mywav-player" controls>
-			<source id="mywav-source" src="" type="audio/wav">
+		<h3 id="tts-wav-name">my synthsis wav</h3>
+		<audio id="tts-wav-player" controls>
+			<source id="tts-wav-source" src="" type="audio/wav">
 		</audio>
 		
 	</div>
+
 	<br>
-	<div id="mywav-fail" style="background-color: red; color: white"></div>
+	<div id="load-message" style="display:none; background-color: blue; color: white">Loading</div>
+	<br>
+	<div id="fail-message" style="display:none; background-color: red; color: white"></div>
 </body>
 </html>
 	
