@@ -7,7 +7,7 @@ from path import PATH
 WEB_URL = 'http://voice.stevenben.nctu.me'
 TTS_TYPE = {
     0: 'mandarin_BZNSYP',
-    1: 'english_LJSpeech'
+    1: 'M_AILABS_mary_ann'
 }
 
 

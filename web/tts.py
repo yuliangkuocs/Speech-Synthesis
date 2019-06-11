@@ -1,8 +1,9 @@
 import os
 import time
 from path import PATH
+from voice import TTS_TYPE
 
-MODE = ['mandarin_BZNSYP', 'english_LJSpeech']
+MODE = [val for key, val in TTS_TYPE.items()]
 
 TIMEOUT = 30
 

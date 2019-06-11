@@ -227,7 +227,30 @@ def api_voice_delete():
         return response(status_code.SUCCESS)
 
     except Exception as err:
-        print('[ERROR - api/voice/getAllWav]', err)
+        print('[ERROR - api/voice/delete]', err)
+        return response(status_code.UNDEFINED)
+
+
+@app.route('/api/voice/deleteAllWav', methods=['POST'])
+def api_voice_deleteAllWav():
+    request_data = request.get_json()
+
+    try:
+        if 'guid' not in request_data:
+            return response(status_code.DATA_FORMAT_ERROR)
+
+        guid = request_data['guid']
+
+        if not check_user(guid):
+            return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
+
+        if not delete_voices_by_guid(guid):
+            raise IndexError('delete voices fail')
+
+        return response(status_code.SUCCESS)
+
+    except Exception as err:
+        print('[ERROR - api/voice/deleteAllWav]', err)
         return response(status_code.UNDEFINED)
 
 
