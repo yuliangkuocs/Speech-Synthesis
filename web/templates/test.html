@@ -18,6 +18,7 @@
 
     	function synthesizeWav(text, wavName, ttsType) {
     		$('#mywav').hide()
+    		failMessage(false, '')
     		
 			myData = {
 				'guid': sessionStorage['guid'],
@@ -38,7 +39,6 @@
             		$('#tts-wav-player')[0].load()
             		$('#tts-wav-name').text(wavName)
             		$('#tts-wav').show()
-            		failMessage(false, '')
 	            },
 
 	            error: function(xhr, status, error) {
