@@ -23,7 +23,7 @@
 		            success: function(res) {
 		            	if (res['status']) {
 		            		window.location.href = 'http://voice.stevenben.nctu.me/test'
-		            		localStorage.setItem('guid', ['data']['guid'])
+		            		localStorage.setItem('guid', res['data']['guid'])
 		            	}
 		     			else {
 		     				console.log(res)
