@@ -47,7 +47,7 @@
     		failMessage(false, '')
     		
 			myData = {
-				'guid': sessionStorage['guid'],
+				'guid': localStorage['guid'],
 				'wav_name': wavName,
 				'text': text,
 				'tts_type': Number(ttsType)
@@ -77,7 +77,7 @@
 
     	function getAllWav() {
     		myData = {
-				'guid': sessionStorage['guid']
+				'guid': localStorage['guid']
 			}
 
 
@@ -100,7 +100,7 @@
 
     	function deleteAllWav() {
     		myData = {
-				'guid': sessionStorage['guid']
+				'guid': localStorage['guid']
 			}
 
 
@@ -119,8 +119,10 @@
 
     	function loadMessage(tell) {
     		if (tell) {
+    			$('#tts-submit').attr('disabled', true)
     			$('#load-message').show()
     		} else {
+    			$('#tts-submit').attr('disabled', false)
     			$('#load-message').hide()
     		}
     	}
