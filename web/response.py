@@ -5,7 +5,8 @@ response_message = {200: 'success',
                     204: 'not login',
                     400: 'data format error',
                     401: 'data content error',
-                    500: 'undefined error'}
+                    500: 'undefined error',
+                    504: 'timeout'}
 
 
 def response(status_code, message=None, response_data=None):
@@ -29,3 +30,4 @@ class StatusCode:
         self.DATA_FORMAT_ERROR = 400
         self.DATA_CONTENT_ERROR = 401
         self.UNDEFINED = 500
+        self.TIMEOUT = 504

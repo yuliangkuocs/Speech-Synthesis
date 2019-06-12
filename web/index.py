@@ -15,7 +15,7 @@ status_code = StatusCode()
 @app.route('/')
 def home():
     if 'user_id' in session:
-        return redirect(url_for('text_to_speech'))
+        return redirect(url_for('test'))
     return render_template('home.html')
 
 
@@ -40,10 +40,8 @@ def private_policy():
 @app.route('/login/')
 def login():
     if 'user_id' in session:
-        print('already login')
         return render_template('already-login.html')
     else:
-        print('not login')
         return render_template('login.html')
 
 
@@ -54,12 +52,10 @@ def register():
 
 @app.route('/test/')
 def test():
-    return render_template('test.html')
-
-
-@app.route('/steven/')
-def steven():
-    return render_template('steven.html')
+    if 'user_id' in session:
+        return render_template('test.html')
+    else:
+        return render_template('not-login.html')
 
 
 # API
@@ -143,39 +139,46 @@ def api_tts_mandarin():
     request_data = request.get_json()
     response_data = {}
 
-    # try:
-    if 'guid' not in request_data or 'text' not in request_data or 'wav_name' not in request_data or 'tts_type' not in request_data:
-        return response(status_code.DATA_FORMAT_ERROR)
+    try:
+        if 'user_id' not in session:
+            return response(status_code.NOT_LOGIN)
 
-    text = request_data['text']
-    guid = request_data['guid']
-    tts_type = request_data['tts_type']
-    wav_name = request_data['wav_name']
+        if 'guid' not in request_data or 'text' not in request_data or 'wav_name' not in request_data or 'tts_type' not in request_data:
+            return response(status_code.DATA_FORMAT_ERROR)
 
-    if not check_user(guid):
-        return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
+        text = request_data['text']
+        guid = request_data['guid']
+        tts_type = request_data['tts_type']
+        wav_name = request_data['wav_name']
 
-    if not check_voice_name(guid, wav_name):
-        return response(status_code.DATA_CONTENT_ERROR, message='wav name already exists')
+        if not check_user(guid):
+            return response(status_code.DATA_CONTENT_ERROR, message='user not exists')
 
-    file_name = generate_voice_name(guid)
+        if not check_voice_name(guid, wav_name):
+            return response(status_code.DATA_CONTENT_ERROR, message='wav name already exists')
 
-    tts(guid, text, file_name, TTS_TYPE[tts_type])
+        file_name = generate_voice_name(guid)
 
-    voice = Voice(guid, file_name, wav_name, tts_type)
+        tts(guid, text, file_name, TTS_TYPE[tts_type])
 
-    is_insert = insert_voice(voice)
+        voice = Voice(guid, file_name, wav_name, tts_type)
 
-    if not is_insert:
-        raise ValueError('insert voice fail')
+        is_insert = insert_voice(voice)
 
-    response_data['wav'] = get_voice_url(voice)
+        if not is_insert:
+            raise ValueError('insert voice fail')
 
-    return response(status_code.SUCCESS, response_data=response_data)
+        response_data['wav'] = get_voice_url(voice)
 
-    # except Exception as err:
-    #     print('[ERROR - api/voice/tts]', err)
-    #     return response(status_code.UNDEFINED)
+        return response(status_code.SUCCESS, response_data=response_data)
+
+    except TimeoutError:
+        print('[ERROR - api/voice/tts]', 'timeout')
+        return response(status_code.TIMEOUT)
+
+    except Exception as err:
+        print('[ERROR - api/voice/tts]', err)
+        return response(status_code.UNDEFINED)
 
 
 @app.route('/api/voice/getAllWav', methods=['POST'])
@@ -184,6 +187,9 @@ def api_voice_getAllWav():
     response_data = {'wavs': {}}
 
     try:
+        if 'user_id' not in session:
+            return response(status_code.NOT_LOGIN)
+
         if 'guid' not in request_data:
             return response(status_code.DATA_FORMAT_ERROR)
 
@@ -210,6 +216,9 @@ def api_voice_delete():
     request_data = request.get_json()
 
     try:
+        if 'user_id' not in session:
+            return response(status_code.NOT_LOGIN)
+
         if 'guid' not in request_data or 'wav_name' not in request_data:
             return response(status_code.DATA_FORMAT_ERROR)
 
@@ -236,6 +245,9 @@ def api_voice_deleteAllWav():
     request_data = request.get_json()
 
     try:
+        if 'user_id' not in session:
+            return response(status_code.NOT_LOGIN)
+
         if 'guid' not in request_data:
             return response(status_code.DATA_FORMAT_ERROR)
 
@@ -255,6 +267,4 @@ def api_voice_deleteAllWav():
 
 
 if __name__ == '__main__':
-    print('create tables')
-    create_tables()
     app.run(host='0.0.0.0', port=8080)
