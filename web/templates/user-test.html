@@ -24,13 +24,13 @@
 			}
 
 			for (var i = 0; i < 10; i++) {
-				myData['en_google'] += parseFloat($($('.en-google-select'))[i].val()) / 10
-				myData['en_ljspeech'] += parseFloat($($('.en-ljspeech-select'))[i].val()) / 10
-				myData['en_milabs'] += parseFloat($($('.en-milabs-select'))[i].val()) / 10
-				myData['ch_google'] += parseFloat($($('.ch-google-select'))[i].val()) / 10
-				myData['ch_mandarin'] += parseFloat($($('.ch-mandarin-select'))[i].val()) / 10
+				myData['en_google'] += parseFloat($($('.en-google-select')[i]).val()) / 10
+				myData['en_ljspeech'] += parseFloat($($('.en-ljspeech-select')[i]).val()) / 10
+				myData['en_milabs'] += parseFloat($($('.en-milabs-select')[i]).val()) / 10
+				myData['ch_google'] += parseFloat($($('.ch-google-select')[i]).val()) / 10
+				myData['ch_mandarin'] += parseFloat($($('.ch-mandarin-select')[i]).val()) / 10
 			}
-
+			console.log(myData)
 			return myData
 		}
 
