@@ -60,7 +60,7 @@ def test():
 
 
 @app.route('/user-test/')
-def test():
+def user_test():
     return render_template('user-test.html')
 
 
@@ -273,7 +273,7 @@ def api_voice_deleteAllWav():
 
 
 # Test
-@app.route('api/test/score', methods=['POST'])
+@app.route('/api/test/score', methods=['POST'])
 def api_test_score():
     request_data = request.get_json()
 
