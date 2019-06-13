@@ -44,7 +44,10 @@ def draw_histogram(scores):
     if type(scores) != dict:
         raise TypeError('draw histogram - scores type get', type(scores))
 
-    plt.bar(scores.keys(), scores.values())
+    x = ['en_google', 'en_ljspeech', 'en_milabs', 'ch_google', 'ch_mandarin']
+    y = [scores[key] for key in x]
+
+    plt.bar(x, y)
     plt.title('TTS Scores')
     plt.xlabel('TTS')
     plt.ylabel('Score')

@@ -282,17 +282,17 @@ def api_voice_deleteAllWav():
 def api_test_score():
     request_data = request.get_json()
 
-    #try:
-    if 'en_google' not in request_data or 'en_ljspeech' not in request_data or 'en_milabs' not in request_data or 'ch_google' not in request_data or 'ch_mandarin' not in request_data:
-        return response(status_code.DATA_FORMAT_ERROR)
+    try:
+        if 'en_google' not in request_data or 'en_ljspeech' not in request_data or 'en_milabs' not in request_data or 'ch_google' not in request_data or 'ch_mandarin' not in request_data:
+            return response(status_code.DATA_FORMAT_ERROR)
 
-    insert_test_score(request_data)
+        insert_test_score(request_data)
 
-    return response(status_code.SUCCESS)
+        return response(status_code.SUCCESS)
 
-    #except Exception as err:
-        #print('[ERROR - api/test/score]', err)
-        #return response(status_code.UNDEFINED)
+    except Exception as err:
+        print('[ERROR - api/test/score]', err)
+        return response(status_code.UNDEFINED)
 
 
 if __name__ == '__main__':
