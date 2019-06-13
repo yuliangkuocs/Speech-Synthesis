@@ -58,6 +58,11 @@ def test():
         return render_template('not-login.html')
 
 
+@app.route('/user-test/')
+def test():
+    return render_template('user-test.html')
+
+
 # API
 # AUTH
 @app.route('/api/auth/login', methods=['POST'])
@@ -263,6 +268,26 @@ def api_voice_deleteAllWav():
 
     except Exception as err:
         print('[ERROR - api/voice/deleteAllWav]', err)
+        return response(status_code.UNDEFINED)
+
+
+# Test
+@app.route('api/test/score', methods=['POST'])
+def api_test_score():
+    request_data = request.get_json()
+
+    try:
+        if 'en' not in request_data or 'ch' not in request_data:
+            return response(status_code.DATA_FORMAT_ERROR)
+
+        en = request_data['en']
+        ch = request_data['ch']
+
+
+
+
+    except Exception as err:
+        print('[ERROR - api/test/score]', err)
         return response(status_code.UNDEFINED)
 
 

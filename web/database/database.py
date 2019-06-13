@@ -26,11 +26,21 @@ def create_tables():
         '''
     )
 
+    db_cursor.execute(
+        '''CREATE TABLE IF NOT EXISTS UserTest (
+            EN_GOOGLE   FLOAT                   NOT NULL,
+            EN_LJSPEECH FLOAT                   NOT NULL,
+            EN_MILABS   FLOAT                   NOT NULL,
+            CH_GOOGLE   FLOAT                   NOT NULL,
+            CH_MANDARIN FLOAT                   NOT NULL);
+        '''
+    )
+
     db_connect.commit()
     db_connect.close()
 
 
-def sql_to_data(db_users=None, db_voices=None, db_user=None, db_voice=None):
+def sql_to_data(db_users=None, db_voices=None, db_user_tests=None, db_user=None, db_voice=None, db_user_test=None):
     if db_users:
         users = [User(db_user[0], db_user[1], db_user[2]) for db_user in db_users]
 
@@ -41,6 +51,11 @@ def sql_to_data(db_users=None, db_voices=None, db_user=None, db_voice=None):
 
         return voices
 
+    elif db_user_tests:
+        user_tests = [UserTest(db_user_test[0], db_user_test[1], db_user_test[2], db_user_test[3], db_user_test[4]) for db_user_test in db_user_tests]
+
+        return user_tests
+
     elif db_user:
         user = User(db_user[0], db_user[1], db_user[2])
 
@@ -50,6 +65,11 @@ def sql_to_data(db_users=None, db_voices=None, db_user=None, db_voice=None):
         voice = Voice(db_voice[0], db_voice[1], db_voice[2], db_voice[3])
 
         return voice
+
+    elif db_user_test:
+        user_test = UserTest(db_user_test[0], db_user_test[1], db_user_test[2], db_user_test[3], db_user_test[4])
+
+        return user_test
 
     return None
 
@@ -311,3 +331,22 @@ def delete_voices_by_guid(guid):
     db_connect.close()
 
     return is_delete
+
+
+# UserTest
+def select_user_tests():
+    """
+    select all user test scores
+    :return: [UserTest]
+    """
+
+    db_connect = sqlite3.connect(DATABASE)
+    db_cursor = db_connect.cursor()
+
+    db_cursor.execute('SELECT * FROM UserTest')
+
+    user_tests = sql_to_data(db_user_tests=db_cursor.fetchall())
+
+    db_connect.close()
+
+    return user_tests

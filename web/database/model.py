@@ -12,3 +12,12 @@ class Voice:
         self.file_name = file_name
         self.wav_name = wav_name
         self.tts_type = tts_type
+
+
+class UserTest:
+    def __init__(self, en_google=None, en_ljspeech=None, en_milabs=None, ch_google=None, ch_mandarin=None):
+        self.en_google = en_google
+        self.en_ljspeech = en_ljspeech
+        self.en_milabs = en_milabs
+        self.ch_google = ch_google
+        self.ch_mandarin = ch_mandarin
