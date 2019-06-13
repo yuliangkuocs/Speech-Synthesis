@@ -5,8 +5,33 @@
     <title>User-Test</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<script type="text/javascript">
+		$(function() {
+    		$('#score-submit').click(function() {
+
+				myData = getAvgScore()
+
+				sendTestScore(myData)
+    		})
+    	})
+
 		function getAvgScore() {
-			$('.en-google-select')
+			myData = {
+				'en_google': 0,
+				'en_ljspeech': 0,
+				'en_milabs': 0,
+				'ch_google': 0,
+				'ch_mandarin': 0
+			}
+
+			for (var i = 0; i < 10; i++) {
+				myData['en_google'] += parseFloat($($('.en-google-select'))[i].val()) / 10
+				myData['en_ljspeech'] += parseFloat($($('.en-ljspeech-select'))[i].val()) / 10
+				myData['en_milabs'] += parseFloat($($('.en-milabs-select'))[i].val()) / 10
+				myData['ch_google'] += parseFloat($($('.ch-google-select'))[i].val()) / 10
+				myData['ch_mandarin'] += parseFloat($($('.ch-mandarin-select'))[i].val()) / 10
+			}
+
+			return myData
 		}
 
 		function sendTestScore(en_google, en_ljspeech, en_milabs, ch_google, ch_mandarin) {
