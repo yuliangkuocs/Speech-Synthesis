@@ -64,6 +64,11 @@ def user_test():
     return render_template('user-test.html')
 
 
+@app.route('/test-score/')
+def test_score():
+    return render_template('test-score.html')
+
+
 # API
 # AUTH
 @app.route('/api/auth/login', methods=['POST'])

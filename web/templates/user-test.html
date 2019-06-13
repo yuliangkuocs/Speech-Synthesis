@@ -5,9 +5,60 @@
     <title>User-Test</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<script type="text/javascript">
-		chDiv = '<div class="ch-score"><p class="ch-text"></p><br><audio class="ch-google-player" controls><source class="ch-google-source" src="" type="audio/wav"></audio><audio class="ch-mandarin-player" controls><source class="ch-mandarin-source" src="" type="audio/wav"></audio></div>'
+		function getAvgScore() {
+			$('.en-google-select')
+		}
 
-		enDiv = '<div class="en-score"><h3 class="en-text"></h3><h4>google</h4><audio class="en-google-player" controls><source class="en-google-source" src="" type="audio/wav"></audio><select class="en-google-select"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><h4>ljspeech</h4><audio class="en-ljspeech-player" controls><source class="en-ljspeech-source" src="" type="audio/wav"></audio><select class="en-ljspeech-select"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><h4>milabs</h4><audio class="en-milabs-player" controls><source class="en-milabs-source" src="" type="audio/wav"></audio><select class="en-milabs-select"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>'
+		function sendTestScore(en_google, en_ljspeech, en_milabs, ch_google, ch_mandarin) {
+			myData = {
+				'en_google': parseFloat(en_google),
+				'en_ljspeech': parseFloat(en_ljspeech),
+				'en_milabs': parseFloat(en_milabs),
+				'ch_google': parseFloat(ch_google),
+				'ch_mandarin': parseFloat(ch_mandarin)
+			}
+
+
+	        $.ajax({
+	            type: 'POST',
+	            url: '/api/test/score',
+	            data: JSON.stringify(myData),
+	            contentType: "application/json",
+	            dataType: 'json',
+
+	            success: function(res) {
+	            	loadMessage(false)
+
+	            	window.location.replace("http://voice.stevenben.nctu.me/test-score");
+	            },
+
+	            error: function(xhr, status, error) {
+            		failMessage(true, xhr.responseJSON['message'])
+            		loadMessage(false)
+	            }
+	        })
+		}
+
+
+		function loadMessage(tell) {
+    		if (tell) {
+    			$('#tts-submit').attr('disabled', true)
+    			$('#load-message').show()
+    		} else {
+    			$('#tts-submit').attr('disabled', false)
+    			$('#load-message').hide()
+    		}
+    	}
+
+    	function failMessage(tell, message) {
+    		if (tell) {
+    			$('#fail-message').show()
+    		} else {
+    			$('#fail-message').hide()
+    		}
+
+    		$('#fail-message').html(message)
+    	}
 	</script>
 </head>
 <body>
@@ -37,7 +88,7 @@
 
     		<h4>ljspeech</h4>
     		<audio class="en-ljspeech-player" controls>
-    			<source class="en-ljspeech-source" src="" type="audio/wav">
+    			<source class="en-ljspeech-source" src="{{url_for('static', filename='user_test/en/ljspeech/0.wav')}}" type="audio/wav">
     		</audio>
     		<select class="en-ljspeech-select">
     			<option value="1">1</option>
@@ -49,7 +100,7 @@
 
     		<h4>milabs</h4>
     		<audio class="en-milabs-player" controls>
-    			<source class="en-milabs-source" src="" type="audio/wav">
+    			<source class="en-milabs-source" src="{{url_for('static', filename='user_test/en/milabs/0.wav')}}" type="audio/wav">
     		</audio>
     		<select class="en-milabs-select">
     			<option value="1">1</option>
@@ -58,9 +109,655 @@
     			<option value="4">4</option>
     			<option value="5">5</option>
     		</select>
-    	</div>
+    	</div><br>
+
+    	<div class="en-score">
+    		<h3 class="en-text">Mexico is going to pay for the wall.</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="en-google-player" controls>
+    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/1.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>ljspeech</h4>
+    		<audio class="en-ljspeech-player" controls>
+    			<source class="en-ljspeech-source" src="{{url_for('static', filename='user_test/en/ljspeech/1.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-ljspeech-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>milabs</h4>
+    		<audio class="en-milabs-player" controls>
+    			<source class="en-milabs-source" src="{{url_for('static', filename='user_test/en/milabs/1.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-milabs-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="en-score">
+    		<h3 class="en-text">Kaohsiung is going to make a fortune.</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="en-google-player" controls>
+    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/2.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>ljspeech</h4>
+    		<audio class="en-ljspeech-player" controls>
+    			<source class="en-ljspeech-source" src="{{url_for('static', filename='user_test/en/ljspeech/2.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-ljspeech-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>milabs</h4>
+    		<audio class="en-milabs-player" controls>
+    			<source class="en-milabs-source" src="{{url_for('static', filename='user_test/en/milabs/2.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-milabs-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="en-score">
+    		<h3 class="en-text">Taiwan is the first Nation in Asia to recognize same-sex marriage.</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="en-google-player" controls>
+    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/3.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>ljspeech</h4>
+    		<audio class="en-ljspeech-player" controls>
+    			<source class="en-ljspeech-source" src="{{url_for('static', filename='user_test/en/ljspeech/3.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-ljspeech-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>milabs</h4>
+    		<audio class="en-milabs-player" controls>
+    			<source class="en-milabs-source" src="{{url_for('static', filename='user_test/en/milabs/3.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-milabs-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="en-score">
+    		<h3 class="en-text">Jeremy Lin has the fastest first step in the NBA.</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="en-google-player" controls>
+    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/4.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>ljspeech</h4>
+    		<audio class="en-ljspeech-player" controls>
+    			<source class="en-ljspeech-source" src="{{url_for('static', filename='user_test/en/ljspeech/4.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-ljspeech-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>milabs</h4>
+    		<audio class="en-milabs-player" controls>
+    			<source class="en-milabs-source" src="{{url_for('static', filename='user_test/en/milabs/4.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-milabs-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="en-score">
+    		<h3 class="en-text">Toronto Raptors can easily won the Championship.</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="en-google-player" controls>
+    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/5.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>ljspeech</h4>
+    		<audio class="en-ljspeech-player" controls>
+    			<source class="en-ljspeech-source" src="{{url_for('static', filename='user_test/en/ljspeech/5.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-ljspeech-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>milabs</h4>
+    		<audio class="en-milabs-player" controls>
+    			<source class="en-milabs-source" src="{{url_for('static', filename='user_test/en/milabs/5.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-milabs-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="en-score">
+    		<h3 class="en-text">Danny and Cherry are only good friends.</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="en-google-player" controls>
+    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/6.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>ljspeech</h4>
+    		<audio class="en-ljspeech-player" controls>
+    			<source class="en-ljspeech-source" src="{{url_for('static', filename='user_test/en/ljspeech/6.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-ljspeech-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>milabs</h4>
+    		<audio class="en-milabs-player" controls>
+    			<source class="en-milabs-source" src="{{url_for('static', filename='user_test/en/milabs/6.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-milabs-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="en-score">
+    		<h3 class="en-text">Google releases first photo of the Pixel 4.</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="en-google-player" controls>
+    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/7.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>ljspeech</h4>
+    		<audio class="en-ljspeech-player" controls>
+    			<source class="en-ljspeech-source" src="{{url_for('static', filename='user_test/en/ljspeech/7.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-ljspeech-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>milabs</h4>
+    		<audio class="en-milabs-player" controls>
+    			<source class="en-milabs-source" src="{{url_for('static', filename='user_test/en/milabs/7.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-milabs-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="en-score">
+    		<h3 class="en-text">Competition is certainly intensifying at the top of the executive jet market.</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="en-google-player" controls>
+    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/8.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>ljspeech</h4>
+    		<audio class="en-ljspeech-player" controls>
+    			<source class="en-ljspeech-source" src="{{url_for('static', filename='user_test/en/ljspeech/8.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-ljspeech-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>milabs</h4>
+    		<audio class="en-milabs-player" controls>
+    			<source class="en-milabs-source" src="{{url_for('static', filename='user_test/en/milabs/8.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-milabs-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="en-score">
+    		<h3 class="en-text">It's the first time in Israel and in the world that the wife of a leader is put on trial for food entrees.</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="en-google-player" controls>
+    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/9.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>ljspeech</h4>
+    		<audio class="en-ljspeech-player" controls>
+    			<source class="en-ljspeech-source" src="{{url_for('static', filename='user_test/en/ljspeech/9.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-ljspeech-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>milabs</h4>
+    		<audio class="en-milabs-player" controls>
+    			<source class="en-milabs-source" src="{{url_for('static', filename='user_test/en/milabs/9.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-milabs-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
     </div>
 
-    <div id="en-container"></div>
+    <div id="ch-container">
+    	<div class="ch-score">
+    		<h3 class="ch-text">台灣民眾最關切的問題是：香港「逃犯條例」修改後會影響台灣人嗎？</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="ch-google-player" controls>
+    			<source class="ch-google-source" src="{{url_for('static', filename='user_test/ch/google/0.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>mandarin</h4>
+    		<audio class="ch-mandarin-player" controls>
+    			<source class="ch-mandarin-source" src="{{url_for('static', filename='user_test/ch/mandarin/0.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-mandarin-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+		</div><br>
+
+		<div class="ch-score">
+    		<h3 class="ch-text">民調結果總統蔡英文勝出，擊敗行政院前院長賴清德。</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="ch-google-player" controls>
+    			<source class="ch-google-source" src="{{url_for('static', filename='user_test/ch/google/1.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>mandarin</h4>
+    		<audio class="ch-mandarin-player" controls>
+    			<source class="ch-mandarin-source" src="{{url_for('static', filename='user_test/ch/mandarin/1.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-mandarin-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="ch-score">
+    		<h3 class="ch-text">戶政事務所每日經手民眾結婚、離婚、出生登記等人生大事。</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="ch-google-player" controls>
+    			<source class="ch-google-source" src="{{url_for('static', filename='user_test/ch/google/2.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>mandarin</h4>
+    		<audio class="ch-mandarin-player" controls>
+    			<source class="ch-mandarin-source" src="{{url_for('static', filename='user_test/ch/mandarin/2.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-mandarin-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="ch-score">
+    		<h3 class="ch-text">長時間的紫外線暴露，不僅會加速皮膚老化，嚴重時還會使皮膚損傷。</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="ch-google-player" controls>
+    			<source class="ch-google-source" src="{{url_for('static', filename='user_test/ch/google/3.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>mandarin</h4>
+    		<audio class="ch-mandarin-player" controls>
+    			<source class="ch-mandarin-source" src="{{url_for('static', filename='user_test/ch/mandarin/3.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-mandarin-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="ch-score">
+    		<h3 class="ch-text">全球股市今日錯綜，貿易戰仍充滿不確定性。</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="ch-google-player" controls>
+    			<source class="ch-google-source" src="{{url_for('static', filename='user_test/ch/google/4.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>mandarin</h4>
+    		<audio class="ch-mandarin-player" controls>
+    			<source class="ch-mandarin-source" src="{{url_for('static', filename='user_test/ch/mandarin/4.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-mandarin-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="ch-score">
+    		<h3 class="ch-text">能源議題對台灣太重要，不能落入政治辯論，應是全國跨黨派支持離岸風電開發。</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="ch-google-player" controls>
+    			<source class="ch-google-source" src="{{url_for('static', filename='user_test/ch/google/5.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>mandarin</h4>
+    		<audio class="ch-mandarin-player" controls>
+    			<source class="ch-mandarin-source" src="{{url_for('static', filename='user_test/ch/mandarin/5.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-mandarin-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="ch-score">
+    		<h3 class="ch-text">報導稱油輪疑遭魚雷擊中。但有專家研判，也不能排除是遭到水雷或自殺炸彈小船的攻擊。</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="ch-google-player" controls>
+    			<source class="ch-google-source" src="{{url_for('static', filename='user_test/ch/google/6.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>mandarin</h4>
+    		<audio class="ch-mandarin-player" controls>
+    			<source class="ch-mandarin-source" src="{{url_for('static', filename='user_test/ch/mandarin/6.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-mandarin-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="ch-score">
+    		<h3 class="ch-text">美中貿易戰惡化，中國為反制美國，欲建立美國企業黑名單，而美方對第三波關稅課徵也未有停止跡象。</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="ch-google-player" controls>
+    			<source class="ch-google-source" src="{{url_for('static', filename='user_test/ch/google/7.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>mandarin</h4>
+    		<audio class="ch-mandarin-player" controls>
+    			<source class="ch-mandarin-source" src="{{url_for('static', filename='user_test/ch/mandarin/7.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-mandarin-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="ch-score">
+    		<h3 class="ch-text">中長期來看，電子產業鏈勢必重新調整，只要科技需求不減，市場終將找到出路。</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="ch-google-player" controls>
+    			<source class="ch-google-source" src="{{url_for('static', filename='user_test/ch/google/8.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>mandarin</h4>
+    		<audio class="ch-mandarin-player" controls>
+    			<source class="ch-mandarin-source" src="{{url_for('static', filename='user_test/ch/mandarin/8.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-mandarin-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+
+    	<div class="ch-score">
+    		<h3 class="ch-text">我已經好多天沒有休息了，希望這個週末不會再有那麼多事情要做。</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="ch-google-player" controls>
+    			<source class="ch-google-source" src="{{url_for('static', filename='user_test/ch/google/9.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>mandarin</h4>
+    		<audio class="ch-mandarin-player" controls>
+    			<source class="ch-mandarin-source" src="{{url_for('static', filename='user_test/ch/mandarin/9.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="ch-mandarin-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div><br>
+    </div>
+    <br>
+    <button id='score-submit'>提交表單</button>
+    <br>
+	<div id="load-message" style="display:none; background-color: blue; color: white">Loading</div>
+	<br>
+	<div id="fail-message" style="display:none; background-color: red; color: white"></div>
 </body>
 </html>
