@@ -7,6 +7,8 @@ from path import PATH
 def insert_test_score(request_data):
     user_test = UserTest(request_data['en_google'], request_data['en_ljspeech'], request_data['en_milabs'],
                          request_data['ch_google'], request_data['ch_mandarin'])
+    for key, value in request_data.items():
+        print(key, value)
 
     is_insert = insert_user_test(user_test)
 
@@ -46,4 +48,4 @@ def draw_histogram(scores):
     plt.title('TTS Scores')
     plt.xlabel('TTS')
     plt.ylabel('Score')
-    plt.savefig('{0}/tts_score.png'.format(PATH['static']))
+    plt.savefig('{0}/tts_score.png'.format(PATH['web_static']))

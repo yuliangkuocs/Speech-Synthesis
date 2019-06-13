@@ -34,16 +34,7 @@
 			return myData
 		}
 
-		function sendTestScore(en_google, en_ljspeech, en_milabs, ch_google, ch_mandarin) {
-			myData = {
-				'en_google': parseFloat(en_google),
-				'en_ljspeech': parseFloat(en_ljspeech),
-				'en_milabs': parseFloat(en_milabs),
-				'ch_google': parseFloat(ch_google),
-				'ch_mandarin': parseFloat(ch_mandarin)
-			}
-
-
+		function sendTestScore(myData) {
 	        $.ajax({
 	            type: 'POST',
 	            url: '/api/test/score',
