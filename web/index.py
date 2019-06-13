@@ -4,6 +4,7 @@ from response import StatusCode, response
 from generate_key import *
 from voice import *
 from user import *
+from user_test import *
 from tts import tts
 
 app = Flask(__name__)
@@ -277,14 +278,12 @@ def api_test_score():
     request_data = request.get_json()
 
     try:
-        if 'en' not in request_data or 'ch' not in request_data:
+        if 'en_google' not in request_data or 'en_ljspeech' not in request_data or 'en_milabs' not in request_data or 'ch_google' not in request_data or 'ch_mandarin' not in request_data:
             return response(status_code.DATA_FORMAT_ERROR)
 
-        en = request_data['en']
-        ch = request_data['ch']
+        insert_test_score(request_data)
 
-
-
+        return response(status_code.SUCCESS)
 
     except Exception as err:
         print('[ERROR - api/test/score]', err)

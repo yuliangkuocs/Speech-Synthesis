@@ -350,3 +350,32 @@ def select_user_tests():
     db_connect.close()
 
     return user_tests
+
+
+def insert_user_test(user_test):
+    """
+    insert an user_test into table UserTest
+    :param user_test: UserTest
+    :return: Bool
+    """
+
+    is_insert = True
+
+    if type(user_test) != UserTest:
+        raise TypeError('[ERROR - DB] user_test type error, get', type(user_test))
+
+    db_connect = sqlite3.connect(DATABASE)
+    db_cursor = db_connect.cursor()
+
+    try:
+        db_cursor.execute('INSERT INTO UserTest (EN_GOOGLE, EN_LJSPEECH, EN_MILABS, CH_GOOGLE, CH_MANDARIN) \
+            VALUES (%f, %f, %f, %f, %f);' % (user_test.en_google, user_test.en_ljspeech, user_test.en_milabs, user_test.ch_google, user_test.ch_mandarin))
+
+    except sqlite3.Error as err:
+        print('[ERROR - DB] Insert an voice fail:', err)
+        is_insert = False
+
+    db_connect.commit()
+    db_connect.close()
+
+    return is_insert
