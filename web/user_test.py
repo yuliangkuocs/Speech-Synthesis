@@ -47,3 +47,8 @@ def draw_histogram(scores):
     plt.xlabel('TTS')
     plt.ylabel('Score')
     plt.savefig('{0}/tts_score.png'.format(PATH['static']))
+
+
+def get_texts():
+    texts = {'en': [], 'ch': []}
+

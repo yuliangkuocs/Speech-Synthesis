@@ -3,8 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>User-Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		chDiv = '<div class="ch-score"><p class="ch-text"></p><br><audio class="ch-google-player" controls><source class="ch-google-source" src="" type="audio/wav"></audio><audio class="ch-mandarin-player" controls><source class="ch-mandarin-source" src="" type="audio/wav"></audio></div>'
+
+		enDiv = '<div class="en-score"><h3 class="en-text"></h3><h4>google</h4><audio class="en-google-player" controls><source class="en-google-source" src="" type="audio/wav"></audio><select class="en-google-select"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><h4>ljspeech</h4><audio class="en-ljspeech-player" controls><source class="en-ljspeech-source" src="" type="audio/wav"></audio><select class="en-ljspeech-select"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><h4>milabs</h4><audio class="en-milabs-player" controls><source class="en-milabs-source" src="" type="audio/wav"></audio><select class="en-milabs-select"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>'
+	</script>
 </head>
 <body>
+    <h1>Deep Learning語音合成與傳統語音合成比較</h1>
+    <div>Tacotron 為利用RNN Model 的端對端語音合成model<br>此表單為評分傳統語音合成(google 助理)<br>
+        與利用現今深度學習技術所運用的語音合成感受比較<br>
+        請綜合音色 語調 斷句等因素給予各音檔一個分數<br>
+        最滿意給5分，最不滿意給1分
+    </div>
+    <br>
 
+    <div id="en-container">
+    	<div class="en-score">
+    		<h3 class="en-text">Ben went to have dinner with his ex-girlfriend.</h3>
+    		
+    		<h4>google</h4>
+    		<audio class="en-google-player" controls>
+    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/0.wav')}}" type="audio/wav">
+    		</audio>
+    		<select class="en-google-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>ljspeech</h4>
+    		<audio class="en-ljspeech-player" controls>
+    			<source class="en-ljspeech-source" src="" type="audio/wav">
+    		</audio>
+    		<select class="en-ljspeech-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+
+    		<h4>milabs</h4>
+    		<audio class="en-milabs-player" controls>
+    			<source class="en-milabs-source" src="" type="audio/wav">
+    		</audio>
+    		<select class="en-milabs-select">
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+    			<option value="5">5</option>
+    		</select>
+    	</div>
+    </div>
+
+    <div id="en-container"></div>
 </body>
 </html>
