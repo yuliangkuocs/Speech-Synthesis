@@ -28,7 +28,7 @@ def create_tables():
 
     db_cursor.execute(
         '''CREATE TABLE IF NOT EXISTS UserTest (
-            EN_GOOGLE   FLOAT                   NOT NULL,
+            EN_ITRI     FLOAT                   NOT NULL,
             EN_LJSPEECH FLOAT                   NOT NULL,
             EN_MILABS   FLOAT                   NOT NULL,
             CH_GOOGLE   FLOAT                   NOT NULL,
@@ -368,8 +368,8 @@ def insert_user_test(user_test):
     db_cursor = db_connect.cursor()
 
     try:
-        db_cursor.execute('INSERT INTO UserTest (EN_GOOGLE, EN_LJSPEECH, EN_MILABS, CH_GOOGLE, CH_MANDARIN) \
-            VALUES (%f, %f, %f, %f, %f);' % (user_test.en_google, user_test.en_ljspeech, user_test.en_milabs, user_test.ch_google, user_test.ch_mandarin))
+        db_cursor.execute('INSERT INTO UserTest (EN_ITRI, EN_LJSPEECH, EN_MILABS, CH_GOOGLE, CH_MANDARIN) \
+            VALUES (%f, %f, %f, %f, %f);' % (user_test.en_itri, user_test.en_ljspeech, user_test.en_milabs, user_test.ch_google, user_test.ch_mandarin))
 
     except sqlite3.Error as err:
         print('[ERROR - DB] Insert an voice fail:', err)

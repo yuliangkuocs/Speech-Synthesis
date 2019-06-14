@@ -15,8 +15,8 @@ class Voice:
 
 
 class UserTest:
-    def __init__(self, en_google=None, en_ljspeech=None, en_milabs=None, ch_google=None, ch_mandarin=None):
-        self.en_google = en_google
+    def __init__(self, en_itri=None, en_ljspeech=None, en_milabs=None, ch_google=None, ch_mandarin=None):
+        self.en_itri = en_itri
         self.en_ljspeech = en_ljspeech
         self.en_milabs = en_milabs
         self.ch_google = ch_google

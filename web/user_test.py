@@ -5,7 +5,7 @@ from path import PATH
 
 
 def insert_test_score(request_data):
-    user_test = UserTest(request_data['en_google'], request_data['en_ljspeech'], request_data['en_milabs'],
+    user_test = UserTest(request_data['en_itri'], request_data['en_ljspeech'], request_data['en_milabs'],
                          request_data['ch_google'], request_data['ch_mandarin'])
     for key, value in request_data.items():
         print(key, value)
@@ -25,10 +25,10 @@ def get_avg_scores(all_user_tests):
     if type(all_user_tests) != list:
         raise TypeError('get avg scores - all_user_tests type get', type(all_user_tests))
 
-    avg_scores = {'en_google': 0, 'en_ljspeech': 0, 'en_milabs': 0, 'ch_google': 0, 'ch_mandarin': 0}
+    avg_scores = {'en_itri': 0, 'en_ljspeech': 0, 'en_milabs': 0, 'ch_google': 0, 'ch_mandarin': 0}
 
     for user_test in all_user_tests:
-        avg_scores['en_google'] += user_test.en_google
+        avg_scores['en_itri'] += user_test.en_itri
         avg_scores['en_ljspeech'] += user_test.en_ljspeech
         avg_scores['en_milabs'] += user_test.en_milabs
         avg_scores['ch_google'] += user_test.ch_google
@@ -44,7 +44,7 @@ def draw_histogram(scores):
     if type(scores) != dict:
         raise TypeError('draw histogram - scores type get', type(scores))
 
-    x = ['en_google', 'en_ljspeech', 'en_milabs', 'ch_google', 'ch_mandarin']
+    x = ['en_itri', 'en_ljspeech', 'en_milabs', 'ch_google', 'ch_mandarin']
     y = [scores[key] for key in x]
 
     plt.bar(x, y)

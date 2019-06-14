@@ -16,7 +16,7 @@
 
 		function getAvgScore() {
 			myData = {
-				'en_google': 0,
+				'en_itri': 0,
 				'en_ljspeech': 0,
 				'en_milabs': 0,
 				'ch_google': 0,
@@ -24,7 +24,7 @@
 			}
 
 			for (var i = 0; i < 10; i++) {
-				myData['en_google'] += parseFloat($($('.en-google-select')[i]).val()) / 10
+				myData['en_itri'] += parseFloat($($('.en-itri-select')[i]).val()) / 10
 				myData['en_ljspeech'] += parseFloat($($('.en-ljspeech-select')[i]).val()) / 10
 				myData['en_milabs'] += parseFloat($($('.en-milabs-select')[i]).val()) / 10
 				myData['ch_google'] += parseFloat($($('.ch-google-select')[i]).val()) / 10
@@ -82,19 +82,24 @@
     <div>Tacotron 為利用RNN Model 的端對端語音合成model<br>此表單為評分傳統語音合成(google 助理)<br>
         與利用現今深度學習技術所運用的語音合成感受比較<br>
         請綜合音色 語調 斷句等因素給予各音檔一個分數<br>
-        最滿意給5分，最不滿意給1分
     </div>
     <br>
+	<h2>英文語音合成</h2>
+	<div>itri為工研院傳統語音合成的model
+		ljspeech為基於ljspeech dataset的tacotron model
+		milabs為基於milabs_mary&ann dataset的tacotron model
+		共有10句，最滿意給5分，最不滿意給1分
+	</div>
 
     <div id="en-container">
     	<div class="en-score">
     		<h3 class="en-text">Ben went to have dinner with his ex-girlfriend.</h3>
     		
-    		<h4>google</h4>
-    		<audio class="en-google-player" controls>
-    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/0.wav')}}" type="audio/wav">
+    		<h4>itri</h4>
+    		<audio class="en-itri-player" controls>
+    			<source class="en-itri-source" src="{{url_for('static', filename='user_test/en/itri/0.wav')}}" type="audio/wav">
     		</audio>
-    		<select class="en-google-select">
+    		<select class="en-itri-select">
     			<option value="1">1</option>
     			<option value="2">2</option>
     			<option value="3">3</option>
@@ -130,11 +135,11 @@
     	<div class="en-score">
     		<h3 class="en-text">Mexico is going to pay for the wall.</h3>
     		
-    		<h4>google</h4>
-    		<audio class="en-google-player" controls>
-    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/1.wav')}}" type="audio/wav">
+    		<h4>itri</h4>
+    		<audio class="en-itri-player" controls>
+    			<source class="en-itri-source" src="{{url_for('static', filename='user_test/en/itri/1.wav')}}" type="audio/wav">
     		</audio>
-    		<select class="en-google-select">
+    		<select class="en-itri-select">
     			<option value="1">1</option>
     			<option value="2">2</option>
     			<option value="3">3</option>
@@ -170,11 +175,11 @@
     	<div class="en-score">
     		<h3 class="en-text">Kaohsiung is going to make a fortune.</h3>
     		
-    		<h4>google</h4>
-    		<audio class="en-google-player" controls>
-    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/2.wav')}}" type="audio/wav">
+    		<h4>itri</h4>
+    		<audio class="en-itri-player" controls>
+    			<source class="en-itri-source" src="{{url_for('static', filename='user_test/en/itri/2.wav')}}" type="audio/wav">
     		</audio>
-    		<select class="en-google-select">
+    		<select class="en-itri-select">
     			<option value="1">1</option>
     			<option value="2">2</option>
     			<option value="3">3</option>
@@ -210,11 +215,11 @@
     	<div class="en-score">
     		<h3 class="en-text">Taiwan is the first Nation in Asia to recognize same-sex marriage.</h3>
     		
-    		<h4>google</h4>
-    		<audio class="en-google-player" controls>
-    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/3.wav')}}" type="audio/wav">
+    		<h4>itri</h4>
+    		<audio class="en-itri-player" controls>
+    			<source class="en-itri-source" src="{{url_for('static', filename='user_test/en/itri/3.wav')}}" type="audio/wav">
     		</audio>
-    		<select class="en-google-select">
+    		<select class="en-itri-select">
     			<option value="1">1</option>
     			<option value="2">2</option>
     			<option value="3">3</option>
@@ -250,11 +255,11 @@
     	<div class="en-score">
     		<h3 class="en-text">Jeremy Lin has the fastest first step in the NBA.</h3>
     		
-    		<h4>google</h4>
-    		<audio class="en-google-player" controls>
-    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/4.wav')}}" type="audio/wav">
+    		<h4>itri</h4>
+    		<audio class="en-itri-player" controls>
+    			<source class="en-itri-source" src="{{url_for('static', filename='user_test/en/itri/4.wav')}}" type="audio/wav">
     		</audio>
-    		<select class="en-google-select">
+    		<select class="en-itri-select">
     			<option value="1">1</option>
     			<option value="2">2</option>
     			<option value="3">3</option>
@@ -290,11 +295,11 @@
     	<div class="en-score">
     		<h3 class="en-text">Toronto Raptors can easily won the Championship.</h3>
     		
-    		<h4>google</h4>
-    		<audio class="en-google-player" controls>
-    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/5.wav')}}" type="audio/wav">
+    		<h4>itri</h4>
+    		<audio class="en-itri-player" controls>
+    			<source class="en-itri-source" src="{{url_for('static', filename='user_test/en/itri/5.wav')}}" type="audio/wav">
     		</audio>
-    		<select class="en-google-select">
+    		<select class="en-itri-select">
     			<option value="1">1</option>
     			<option value="2">2</option>
     			<option value="3">3</option>
@@ -330,11 +335,11 @@
     	<div class="en-score">
     		<h3 class="en-text">Danny and Cherry are only good friends.</h3>
     		
-    		<h4>google</h4>
-    		<audio class="en-google-player" controls>
-    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/6.wav')}}" type="audio/wav">
+    		<h4>itri</h4>
+    		<audio class="en-itri-player" controls>
+    			<source class="en-itri-source" src="{{url_for('static', filename='user_test/en/itri/6.wav')}}" type="audio/wav">
     		</audio>
-    		<select class="en-google-select">
+    		<select class="en-itri-select">
     			<option value="1">1</option>
     			<option value="2">2</option>
     			<option value="3">3</option>
@@ -368,13 +373,13 @@
     	</div><br>
 
     	<div class="en-score">
-    		<h3 class="en-text">Google releases first photo of the Pixel 4.</h3>
+    		<h3 class="en-text">itri releases first photo of the Pixel 4.</h3>
     		
-    		<h4>google</h4>
-    		<audio class="en-google-player" controls>
-    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/7.wav')}}" type="audio/wav">
+    		<h4>itri</h4>
+    		<audio class="en-itri-player" controls>
+    			<source class="en-itri-source" src="{{url_for('static', filename='user_test/en/itri/7.wav')}}" type="audio/wav">
     		</audio>
-    		<select class="en-google-select">
+    		<select class="en-itri-select">
     			<option value="1">1</option>
     			<option value="2">2</option>
     			<option value="3">3</option>
@@ -410,11 +415,11 @@
     	<div class="en-score">
     		<h3 class="en-text">Competition is certainly intensifying at the top of the executive jet market.</h3>
     		
-    		<h4>google</h4>
-    		<audio class="en-google-player" controls>
-    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/8.wav')}}" type="audio/wav">
+    		<h4>itri</h4>
+    		<audio class="en-itri-player" controls>
+    			<source class="en-itri-source" src="{{url_for('static', filename='user_test/en/itri/8.wav')}}" type="audio/wav">
     		</audio>
-    		<select class="en-google-select">
+    		<select class="en-itri-select">
     			<option value="1">1</option>
     			<option value="2">2</option>
     			<option value="3">3</option>
@@ -450,11 +455,11 @@
     	<div class="en-score">
     		<h3 class="en-text">It's the first time in Israel and in the world that the wife of a leader is put on trial for food entrees.</h3>
     		
-    		<h4>google</h4>
-    		<audio class="en-google-player" controls>
-    			<source class="en-google-source" src="{{url_for('static', filename='user_test/en/google/9.wav')}}" type="audio/wav">
+    		<h4>itri</h4>
+    		<audio class="en-itri-player" controls>
+    			<source class="en-itri-source" src="{{url_for('static', filename='user_test/en/itri/9.wav')}}" type="audio/wav">
     		</audio>
-    		<select class="en-google-select">
+    		<select class="en-itri-select">
     			<option value="1">1</option>
     			<option value="2">2</option>
     			<option value="3">3</option>
