@@ -283,7 +283,7 @@ def api_test_score():
     request_data = request.get_json()
 
     try:
-        if 'en_google' not in request_data or 'en_ljspeech' not in request_data or 'en_milabs' not in request_data or 'ch_google' not in request_data or 'ch_mandarin' not in request_data:
+        if 'en_itri' not in request_data or 'en_ljspeech' not in request_data or 'en_milabs' not in request_data or 'ch_google' not in request_data or 'ch_mandarin' not in request_data:
             return response(status_code.DATA_FORMAT_ERROR)
 
         insert_test_score(request_data)
