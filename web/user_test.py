@@ -47,6 +47,7 @@ def draw_histogram(scores):
     x = ['en_itri', 'en_ljspeech', 'en_milabs', 'ch_google', 'ch_mandarin']
     y = [scores[key] for key in x]
 
+    plt.clf()
     plt.bar(x, y)
     plt.title('TTS Scores')
     plt.xlabel('TTS')
